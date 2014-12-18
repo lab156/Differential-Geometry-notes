@@ -1,0 +1,48 @@
+%25 de febrero
+\textbf{Homework Problem 8}\\
+$M_1$, $M_2$ be 2 different manifolds. $f\from M_1 \to M_2$ local diffeomorphism. Prove that if $M_2$ is orientable $\implies$ $M_1$ is orientable. \\
+If $p\in U\cap V$ then if $\phi_{uv}|_w=\phi_v\circ \phi_u ^{-1} $ a local diffeomorphism maps a subset $S\subset W$. 
+
+We assumed that $f|_S$ is a local diffeomorphism. Need to show: 
+$$\det\left( \phi_{v}\circ \phi_u |_W \right) >0$$ 
+substituting $\phi_v= \psi_{v'}\circ f|_S$ and $\phi_u= \psi_{u'}\circ f|_S$; the $f$ will cancel out and we get:
+$$\det \left( \psi_{v}\circ \psi_u |_W \right) >0$$
+
+\subsection{Submanifolds, Embeddings, etc.}
+\begin{ddef}
+A smooth map $f\from M^m \to N^n$ is
+\begin{enumerate}[a)]
+\item An inmersion if $df_p\from \tnsp_p M \to \tnsp_{f(p)} N$ is non-singular at each $p\in M$.
+\item A submersion if  $df_p\from \tnsp_p M \to \tnsp_{f(p)} N$ is surjective ($m\geq n$).
+\item A map of constant rank if $r= \rank(df_p)$ does not depend on $p\in M$.
+\item An embedding if $r=m$ and $f$ is a homeomorphism onto $f(M) \subset N$.
+\end{enumerate}
+\end{ddef}
+
+\begin{examples}
+\begin{enumerate}[a)]
+\item $\alpha \from S^1 = \RRR/\{2\pi\} \to \RRR^2$ where $\alpha([\theta]) = \beta(\theta) = (\cos(\theta), \sin(2\theta))$. This map \emph{immerses} the circle into an self intersecting curve that looks like an infinity sign. \\
+Also note that not even the map $\beta\from (-\pi/2, \pi/2) \to \RRR^2$ is still not an embedding because the domain is open and the image is a closed curve.
+\item $\pi_k \from \RRR^n \to \RRR^k$. The $k$-th projection is defined as:
+$$\pi_k(x_1,\ldots, x_k,x_{k+1},\ldots, x_n)= (x_1,\ldots, x_k)$$ is obviously surjective. 
+\item $f\from S^3 \to S^2$ where we identify $S^3\subset \{(z,w) \from |z|^2 + |w|^2 =1 \}$ and:
+$$f(z,w) = [z,w] \in \CC P^1 \cong S^2$$
+
+\item $f\from \RRR^{n^2} \to \RRR^{n^2} $ and we define $f(M) = M\,M^T\in \text{Sym}(n)$ is a constant rank $r=\frac{(n+1)n}{2}$.
+
+\item $f\from T^2 \cong S^1\times S^1 \to S^3 \subset \RRR^4$ where $f$ is defined as:
+$$f(\theta,\phi) = \frac{1}{\sqrt{2}} (\cos(\theta),sin(\theta),\cos(\phi),\sin(\phi))$$
+$f$ embeds $T^2$ in $S^3$ this is called the ``Clifford Torus''.
+
+\item $G(x,y,z) = (x^2-y^2, xy,xz,yz)$ defines a 2-to-1 immersion of $S^2$ into $\RRR^4$ by restriction. $G|_{S^2 \subset \RRR^3}$ $G(-x,-y,-z) = G(x,y,z) \implies G$ as a well defined map $G: \RRR^2 P\to \RRR^4$ and is an embedding.
+\item $H(\theta, \phi) = (\cos(\theta),\cos(2\phi),\sin(2\phi),\sin(\phi)cos(\theta),\sin(\theta)\sin(\phi))$ that goes from $(\theta,\phi)\in [0,2\pi]\times [0,\pi]$ unduces an emdedding $h\from \text{Klein Bottle} \to \RRR^5$
+\end{enumerate}
+\end{examples}
+
+\begin{remarks}[Facts]
+\hspace{2em}  
+\begin{enumerate}
+\item Can't embed Closed= no-boundary=Compact non-orientable surface in $\RRR^3$.
+\item If $M^m$ is a compact manifold of dimension $m$ thet $M$ embeds in $\RRR^{2m}$ (theorem by Whitney) and immerses in $\RRR^{2m-1}$.
+\end{enumerate}
+\end{remarks}

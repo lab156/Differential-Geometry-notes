@@ -1,0 +1,89 @@
+%8 de abril
+$(M,g)$ For $M\subset \RRR^3$ and 
+\begin{gather*}
+g=Edu \otimes du + Fdu\otimes dv + Fdv \otimes du + Gdv\otimes dv\\
+ds^2 = Edu^2 + 2Fdudv + Gdv^2
+\end{gather*}
+
+\begin{examples}\label{ejemplo:1}
+$S^2\subset \RRR^3 $
+\begin{gather*}
+\sigma\from [0,2\pi]\times [0,\pi] \to S^2\\
+\sigma(\theta,\phi) = (x,y,z) = (\cos(\theta)\sin(\phi),\sin(\theta)\sin(\phi), \cos(\phi))
+\end{gather*}
+immersion for $0<\phi<\pi$
+\end{examples}
+
+\begin{gather*}
+ds^2 = \sigma_\theta\sigma_\theta d\theta^2 + 2\sigma_\theta \sigma_\phi d\theta d\phi + \sigma_\phi \sigma_\phi d\phi^2\\
+= \sin^2(\phi) d\theta^2 + d\phi^2
+\end{gather*}
+
+Parallels $\gamma\from \theta(t) = t$ $\phi=\phi_0$ for $0\leq t \leq 2\pi$:
+$$L_\gamma \from \int_{[0,2\pi]} = \int_{[0,2\pi]}\sqrt{\sin^2(\phi_0)} dt = \int_{[0,2\pi]} \sin(\phi_0)dt = 2\pi\sin(\phi_0)$$
+
+Isometries Rotation about $z$ axis. The rotation about $z-$axisis just:
+$$\tilde \theta = \theta-\theta_0,\ \tilde \phi = \phi, \ d\tilde s^2= ds^2$$
+This is an isometries.\\
+Another examples $T^2\subset \RRR^3$, understood as a:
+\begin{gather*}
+\sigma(\theta, \phi) = ((a+r\cos(\phi))\cos(\theta), (a+r\cos(\phi))\sin(\theta), r\sin(\phi))\\
+ds^2 = (a+r\cos(\phi))^2 d\theta^2 + r^2 d\phi^2
+\end{gather*}
+has the same type of symmetries as the sphere:
+$$R_\theta\from \tilde \theta=\theta-\theta_0,\; \tilde\phi=\phi$$
+Parallels: $\phi=\phi_0$, $L=2\pi (a+r\cos(\phi))$.\\
+We can think as this manifold being described as:
+$$T^2=S_\theta^1 \times S_\phi^1$$
+
+\begin{ddef}
+If $M_1$ and $M_2$ are Riemann Manifold and $M=M_1\times M_2$ the product manifold, with projection $\pi_i \from M\to M_i$.\\
+Then we define the \textbf{Product Metric} as:
+$$\langle u | v \rangle _{(p,q)} = \langle d\pi_1 u | d\pi_1 v\rangle_p + \langle d\pi_2 u | d\pi_2 v \rangle_q$$
+\end{ddef}
+
+\subsection{Volumes of Riemann Manifolds}
+\begin{examples}
+One dimensional volume of curves $\gamma\subset (M,\langle\ |\ \rangle)$ is just the length.
+\end{examples}
+Let $\gamma(x)$ perametrize $T\subset M$. The induced metric of $\Gamma$ is:
+$$g(u,v) = \langle d\gamma(v) | d\gamma(v) \rangle $$
+In particular:
+$$g_{11}= g\left(\frac{\partial}{\partial x},\frac{\partial}{\partial x}\right) = \langle\gamma^1|\gamma^1 \rangle$$
+then the ``1-D volume'' (length) if $\Gamma$ is:
+$$L= \int_\Gamma 1 = \int_{[a,b]} \sqrt{g_11} = \int_{[a,b]} |\gamma'|$$
+which does not depend on the parametrization.\\
+Let $r(y)$ parametrixed $\Gamma$ on $[c,d]$ and $\rho\from [a,b] \to [c,d]$ is another diffeomorphism so that $\gamma(x) = r(y) = r(\rho(x))$. And $h_v(y)=\langle r'(y),r'(y) \rangle$, then 
+$$\int_{[a,b]} \sqrt{g_{11}} = \int_{[a,b]} |r'(\rho(x))||\rho'(x)|=\int_{\rho([a,b]) = [c,d]} |r'(y)| = \int_{[c,d]} \sqrt{h_{11}}$$
+Using this change of variable formula.
+$$\int_{[a,b]} f\circ \rho|\rho'| = \int_{\rho([a,b])}f$$
+if $\rho'>0$
+$$\int_a^b f(\rho(x))\rho'(x) dx = \int_c^d f(y) dy$$
+if $\rho'<0$ the change of variable formula becomes
+$$\int_a^b f\rho(x) (-\rho'(x)) dx = \int_{[c,d]} f(y) dy = \int_d^c f(y) dy$$
+\begin{ddef}[Volume of $(M,g)$]
+For $f(x) = f(x_1,\ldots ,x_n) $ integrable on $A\subset \RRR^n$ write:
+$$\int_A f= \int_Af(x) dx_1 \ldots dx_n$$
+suppose $\rho\from A\to \rho(A) = B\subset \RRR^n$ 
+$$\rho(y_1(x_1,\ldots,x_n), \ldots, y_n(x_1,\ldots, x_n))$$
+ with jacobian $J_p = \left( \frac{\partial y_i}{\partial  x_j} \right)$, the change of variable form.
+$$\int_{\rho(A)} f = \int_A f\circ \rho |\det J_\rho |$$
+\end{ddef}
+Now suppose $\phi = (x_1,\ldots, x_n),\; \psi = (y_1,\ldots, y_n)$ are charts.
+
+On $V\subset M, \ A = \phi(V) , \ B=\psi(V)$ and let 
+$$\rho = \psi \circ \phi^{-1} = (y_1(x_1,\ldots, x_n) ,\ldots, y_n (x_1,\ldots, x_n))$$
+On $V$ matrix $g$ has local representation:
+$$g_{ij} = g\left( \frac{\partial}{\partial x_i}, \frac{\partial}{\partial x_j}\right); \quad h_{ij} =\left(  \frac{\partial}{\partial y_i}, \frac{\partial}{\partial y_j}\right)$$
+Let $C=(c_{ij}) =  \left( \frac{\partial y_i}{\partial  x_j} \right), \ c^T = (c_{ij}),\ G= (g_{ij})$. Then 
+\begin{gather*}
+g_{ij} = g\Big(\underbrace{\sum_k \frac{\partial y_k}{\partial x_i }\frac{\partial}{\partial y_k}}_{\frac{\partial}{\partial x_i}}, \sum_l  \frac{\partial y_l}{\partial x_j }\frac{\partial}{\partial y_l}\Big)\\
+= \sum_{kjl} C_{ki} h_{kl} C_{lj} = \sum_{k,l} C_{ik}^T h_{kl} C_{lj}
+\end{gather*}
+Then $G=C^THC,\ \det (G) = \det(C)^2\det H$.
+This means that 
+$$\int_A \sqrt{\det(g_{ij})} = \int_A\sqrt{\det(h_{ij})} \Big|\det\left( \frac{\partial y_i}{\partial x_j }\right)\Big|\overset{\text{C.V.}}{=}\int_B \sqrt{\det(h_{ij})}$$
+So can define volume of such $V\subset M$ by:
+$$\int_V 1 = \int_A \sqrt{\det(g_{ij})}$$
+going to need partitions of unity next time.
+

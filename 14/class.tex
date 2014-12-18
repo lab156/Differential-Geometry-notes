@@ -1,0 +1,61 @@
+% 6 de marzo
+Do Carmo problem 0.5.\\
+Let $F\from \RRR^3 \to \RRR^4$ defined by:
+$$f(x,y,z) = (x^2-y^2, xy, xz, yz)$$
+we restrict $f=F|_{S^2}$ so $\hat f \from P^2(\RRR) \to \RRR^4$ given by $\tilde f([p])=f(p)$. The question is if $d\tilde f_p$ is injective for all $p$.\\
+Let $p\in P^2(\RRR)$, let $\phi$ be a chart about $p$ and let $v\in \tnsp_pM$.
+\begin{align*}
+d\tilde f_p(v) &= d\tilde f_p(v^1\frac{\partial}{\partial x_1} + v^2 \frac{\partial}{\partial x_ 2} ) \\
+%
+&= v^1 d\tilde f_p(\frac{\partial}{\partial x_1} ) + v^2d\tilde f_p(\frac{\partial}{\partial x_2} )\\
+%
+&= v^1 \sum_{i=1}^4 \frac{\partial}{\partial x_1} (r_i\circ \tilde f) \frac{\partial}{\partial r_i} + v^2 \sum_{i=1}^4 \frac{\partial}{\partial x_2} (r_i\circ \tilde f) \frac{\partial}{\partial r_i}
+\end{align*}
+\textbf{Case 1} $p_1 \neq 0$ 
+\begin{gather*}
+ \phi(p)=\phi(p_1,p_2,p_3) = \left(\frac{p_2}{p_1}, \frac{p_3}{p_1} \right)\\
+r_i\circ \tilde f \tilde \phi ^{-1} (q_1,q_2)\\
+= r_i\circ \tilde f(1,q_1,q_2) \\
+= r_i(1-q_1^2,q_1,q_2,q_1q_2)\\
+\end{gather*}
+grabs the ith slot  
+\begin{gather*}
+(-2\left(\frac{p_2}{p_1}\right)v^1) \frac{\partial}{\partial r_1}  + (v^1) \frac{\partial}{\partial r_2} + (v^2) \frac{\partial}{\partial r_3} + (\frac{p_3}{p_1} v^1 + \frac{p_2}{p_1} v^2) \frac{\partial}{\partial r_2} \\
+(v_1,v_2) \mapsto \left(-2\frac{p_2}{p_1} v^1,v^1,v^2,\frac{p_3}{p_1}v^1 + \frac{p_2}{p_1}v^2 \right)
+\end{gather*}
+This implies that the map is injective because the kernel is trivial i.e. the dericative is zero only when $v^1$ and $v^2$ are zero.\\
+\textbf{shortcut}
+We know $\pi\from S^2 \to \RRR P^2$ is a local Diffeomorfism so it's an inmersion
+\begin{equation*}
+dF= \left( \begin{array}{cc|c}
+2x & -2y & 0 \\
+y  &   x & 0 \\
+\hline
+z  & 0 & x  \\
+0 & z & y  
+\end{array}\right)
+\begin{pmatrix} v_1 \\ v_2 \\ v_3
+\end{pmatrix}=
+\begin{pmatrix}
+A \\ B \\ C \\ D 
+\end{pmatrix}
+\end{equation*}
+Now note that $A=B=0\implies v^1 = v^2 =0$ and $C=D=0 \implies v^3=0$.\\
+$\tilde f=P^2(\RRR) \to \RRR^4$.
+\begin{teorema}
+If a continuous bijective map from a compact to a Haussdorff then it is a homeomorphism.
+\end{teorema}
+\begin{remarks}
+Problem about the Moebius strip\\
+First define a cylinder $C$:
+$$C=\{(x,y,z)\in \RRR^3 \from x^2+y^2=1 \}$$
+and we define the map $A\from C\to C$ as $A(x,y,z)=(-x,-y,-z)$
+the gluing operator is:
+$$\pi\from C\to M,\ \pi(p) = \{p,A(p) \}$$
+Need to show that $G$ acts ``evenly'' where $G=\{ik,A\}$ apparently using that $U_p\subset M$ then $\lambda_g(U_p) \cap U_p = \emptyset$ unless $g=e$.
+
+\begin{teorema}[Important Path Lifting Theorem]
+If $\gamma\from [a,b] \to M/G$ and $\pi(A)=\gamma(A)$, then there exists a unique lift of $\gamma$ to $\Gamma\from [a,b] \to M$ such that $\Gamma(a)=A$.
+\end{teorema}
+\end{remarks}
+

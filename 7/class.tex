@@ -1,0 +1,52 @@
+A a linear derivation $\dot \gamma(0)(f)=[\gamma]f= \frac{d}{dt}(f\circ \gamma)\big|_{t=0}$ and, $[\gamma_1]=[\gamma_2] $ if they are the same linear derivative.\\
+To see a curve $\gamma $ as a linear derivation I would use the chart trick: $$\dot\gamma(0)(f)=\frac{d}{dt}(f\circ \gamma)\big|_{t=0}=\frac{d}{dt}(f\circ \phi^{-1} \circ \phi\circ \gamma)\big|_{t=0}=\nabla (f\circ \phi^{-1})\big|_{\phi(p)} \cdot (\phi\circ \gamma)'(0)$$
+Picking up the pieces we get that the components $v_i$ of the vector are given by the components of $(\phi\circ\gamma)'$.\\
+
+Given $(\phi,V)$ and $\gamma:(-\epsilon ,\epsilon)\to V$ a curve. Let $\Gamma=\phi\circ\gamma$ and $F=f\circ \phi^{-1} $ and note that $$\dot\gamma(0)(f)=\nabla F(\Gamma(0))\cdot \dot \Gamma(0) = \sum \frac{\partial F }{\partial x_i}\bigg|_{\phi(p)} \dot x_i = \left(\sum x_i \frac{\partial}{\partial x_i}\right)(f) $$ 
+
+The descomposition of the vectors is: $\dot \gamma(0)= \sum \dot x_i \frac{\partial}{\partial x_i} $ and $\dot \Gamma(0) = \sum \dot x_i \frac{\partial}{\partial r_i?????} $
+ 
+In particular the  curve $\Gamma(t)=\phi(p)+ te_i\leftrightarrow \gamma(t)=\phi^{-1} (\Gamma(t))$ is the ``i--th curve'' which has tangent $\frac{\partial}{\partial x_i} $.
+
+(Check Do-Carmo page 7 where he ignore the $\phi$s\\
+
+\begin{ddef}[Differentials]
+Let $p=\gamma(0)$ and $f(p)=f(\gamma(0))$ then the differential is defined as:
+$$df_p(\dot\gamma(0))=(f\circ\gamma)'(0)$$
+switch back to $f$.\\
+If $f:M\to N$ is smooth at $p\in M$. The differential of $f$ at $p$ is the linear map $df_p:\tnsp_pM\to \tnsp_{f(p)}N$ given by:
+$$df_p(v)(g)=v(g\circ f)=w(g)$$
+for all $v\in \tnsp_pM\ g\in C^\infty(f(p))$. This is also called the \emph{push--forward} and is written as $w=f_*v$ 
+\end{ddef}
+\subsection{Local Representation of Differentials}
+Let $f:M\to N$ be a smooth function. And let $\phi=(x_1,\ldots, x_n) $ a chart about p; also $\psi=(y_1,\ldots,y_n)$ a chart about $f(p)$. Then $df(\frac{\partial}{\partial x_j}) = \sum v^i \frac{\partial}{\partial y_i}$ for some $v^i$. In fact: 
+\begin{align}
+v^k &= \left(\sum_i v_i \frac{\partial}{\partial y_i}\right)(y_k)\\
+    &= df\left(\frac{\partial}{\partial x_j}\right)(y_k)=\frac{\partial}{\partial x_j}(y_k\circ f)
+\end{align}       
+$$df\left(\frac{\partial}{\partial x_j}\right)=\sum_i^n \frac{\partial}{\partial x_j}(y_i\circ f) \frac{\partial}{\partial y_i}   $$
+
+The matrix $A_{ij}=(\frac{\partial}{\partial x_j}(y_i\circ f))_{ij}$ is the Jacobian of $f:M\to N$ with basis $\{\frac{\partial}{\partial x_j}\}$ at $p\in M$ and $\{\frac{\partial}{\partial y_i}\}$ at $f(p)\in N$.\\
+This agrees with the usual one in case $M=\RRR^m$ and $N=\RRR^n$.   
+
+Note the special case of $f=\phi=(x_1,\ldots,x_n)$ and $\phi:M\to \RRR^m$ 
+\begin{align*}
+d\phi\left(\frac{\partial}{\partial x_j}\right) &= \sum_i^m \frac{\partial}{\partial x_j} (r_j\circ\phi) \frac{\partial}{\partial r_j}    \\
+                    &=\sum \frac{\partial x_i}{\partial x_j} \frac{\partial}{\partial r_i} = \frac{\partial}{\partial r_j}
+\end{align*}
+
+\begin{ddef}[The Tangent Bundle of $M^m$]
+$$\tnsp M = \cup_{p\in M} \tnsp_pM$$
+Is a $2m$--dimensional manifold.\\
+We use the projections mapings $\pi: \tnsp M\to M$ i.e. $v_p \mapsto p$ 
+\end{ddef}      
+
+\subsection{Manifold Structure}
+Let $(\phi,w)$ be a chart with $\phi=(x_1,\ldots, x_m)$ on $M$. Define a chart $\tilde \phi: \pi^{-1} (w)\to \RRR^{2m}$ 
+\begin{align*}
+\tilde \phi(v_p) & = (\phi(p), d\phi(v)) \\
+                 & = (x_1(p),\ldots, x_m(p), dx^1(v),\ldots, dx^m(v))
+\end{align*}
+applying $v=\sum v^i \frac{\partial}{\partial x_i} $ and bootstraping: 
+$$ x_i \to \frac{\partial}{\partial x_j} \to dx^k $$
+This has apparently something to do with: $\frac{\partial}{\partial x_j} =\delta_{ij},\ dx^k \left(\frac{\partial}{\partial x_j} \right) = \delta_{jk}$   

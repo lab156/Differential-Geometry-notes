@@ -1,0 +1,82 @@
+%20 de marzo
+\subsection{Orientability in terms of vector fields of by vector fields}
+A frame at $p\in M$: $\{e_1,\ldots,e_n \}$ basis for $\tnsp_pM$ determines an orientation at $p$.
+
+If $\phi\from U_p \to \RRR^n$ then $d\phi_p(e_i)=f_i \in \RRR^n$. Now let $\{e_1,\ldots, e_n\}$ be $n$ smooth linear independent vectors fields on open set $U\subset M$.
+
+Assume $M=\cup U_i$ covering and frames $F_i=\{e_1^i,\ldots, e_n^i\}$ for each $U_i$; assume $F_i,F_j$ consistent on $U_i\cap U_j\neq \empty$ then $M$ is oriented.
+
+\begin{teorema}
+Prove that any Lie group is orientable.
+\end{teorema}
+
+\begin{examples}
+\hspace{1cm}
+\begin{itemize}
+\item $SO(3) \simeq \RRR P^3$ note that:
+\begin{gather*}
+B_\pi = \{x\in \RRR^3 \ |x| \leq \pi \}\\
+\hat B_\pi = B_\pi/\{\pm \}
+\end{gather*}
+where $\{\pm\}$ is the equivalence relationship that identifies antipodal points. \\
+$F\from B_\pi/\{\pm\} \to SO(3),\ F(x) = R_x(|x|)$.
+\item $S^3=SU(2)$ is parallelizable.
+\end{itemize}
+\end{examples}
+
+\subsection{The Lie Bracket}
+\begin{ddef}
+Given vector fields $X,Y\in X^\infty (M)$ that are smooth on $M$. Let an oprator on smooth functions $f\in C^\infty(M)$ called the \textbf{Lie Bracket} of $X$ and $Y$ defined as:
+$$[X,Y](f) = X(Y(f)) - Y(X(f))$$
+so it runs out that $[X,Y]: C^\infty(M) \to C^\infty(M)$. In fact it can be proven easily that $[X,Y]$ actis as a linear derivation a each $p\in M$; that is 
+\begin{enumerate}[1)]
+\item Linear 
+\item Satisfies Liebnitz rule.
+\item Evidently second order partial derivations cancel out.
+\item And $[X,Y]=Z\in X^\infty(M)$ varies smoothly with $p\in M$ 
+\end{enumerate}
+\end{ddef}
+
+\begin{teorema}
+The Lie bracket fives the Infinite dimensional vector space $X^\infty(M)$ the structure of a Lie Algebra:\\
+$\forall \; X,Y,Z \in X^\infty(M)\quad a,b\in \RRR$:
+\begin{enumerate}[1)]
+\item $[X,Y]= - [Y,X]$
+\item $[aX+bY,Z] = a[X,Z] + b[Y,Z]$ (bilearity).
+\item $[[X,Y],Z] + [[Y,Z],X] + [[Z,X],Y] = 0$ (Jacobi Identity).
+\end{enumerate}
+\end{teorema}
+
+\begin{remarks}
+The jacobi identity states $[[X,Y],Z] - [X,[Y,Z]] = [Y,[Z,X]]$, this says that since the right hand side is generally non-zero, then it is measuring the non-associativity of the Lie bracket.
+\end{remarks}
+
+\begin{ddef}
+Let $\phi: M\to N$ be a smooth map  and $X\in X^\infty(M),\ A\in X^\infty(N)$.\\
+Then $X$ is \textbf{$\phi$-related} to $A$ iff $d\phi(X) = A_\phi$ at each $p\in M$.  Another way to define this is that for each $g\in C^\infty(N)$ and $p\in M$,
+$$A_{\phi(p)} (g) = d\phi (X_p) (g) = X_p(g\circ \phi) $$
+suppress $p$, and we get $X(g\circ \phi) = A(g)\circ \phi$ and this is a very useful alternate definition of $\phi$-relatedness.
+\end{ddef}
+
+\begin{teorema}
+Let $\phi\from M\to N$ be smooth. If $X$ is $\phi$-related to $A$. and $Y$ is $\phi$-related to $B$, then $Z=[X,Y]$ is $\phi$-related to $C= [A,B]$
+\begin{proof}
+For all $g\in C^\infty(\NN)$, $C(g)\circ \phi = [A,B](g)\circ \phi$
+\begin{align*}
+&= A(B(g))\circ\phi - B(A(g)) \circ \phi \\
+&= X(B(g)\circ\phi) - Y(A(g)\circ\phi)\\
+&= X(Y(g\circ\phi)) - Y(X(g\circ\phi))\\
+&= [X,Y](g\circ\phi) = Z(g\circ\phi)
+\end{align*}
+\end{proof}
+\end{teorema}
+
+\begin{teorema}
+If $\phi= (x_1,\ldots,x_n)$ is a chart on $U\subset M$ , then the coordinate field $\frac{\partial}{\partial x_i}  $ are $\phi$-related to standard fields $\frac{\partial}{\partial r_i} $ so any two coordinate vector fields commute.
+$$\left[ \frac{\partial}{\partial x_i}, \frac{\partial}{\partial x_j}  \right]=0$$
+\begin{proof}
+Let $g\in C^\infty(\RRR^n)$, let $f=g\circ \phi$ then 
+$$\frac{\partial}{\partial x_i} (g\circ\phi)=\frac{\partial f}{\partial x_i} = \frac{\partial f\circ \phi^{-1} }{\partial r_i} \circ \phi = \frac{\partial g}{\partial r_i} \circ \phi$$
+Then $[\frac{\partial}{\partial x_i} , \frac{\partial}{\partial x_j}] = 0 $ because $[\frac{\partial}{\partial r_i} , \frac{\partial}{\partial r_j}] = 0$.
+\end{proof}
+\end{teorema}

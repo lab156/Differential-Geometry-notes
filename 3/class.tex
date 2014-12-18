@@ -1,0 +1,29 @@
+%latex
+\begin{ddef}[The Real Projective Space]
+If we take the equivalence relation $u \sim v$ iif $u=\lambda v$. Then the Projective space $\RRR P^n$ on the field $\RRR$ is $\RRR P^n = \{ [u]:\ u\in \RRR^{n+1}\}$.
+\end{ddef}
+
+If $V_i = \{[u] = [u_1, \ldots , u_{n+1}]:\ u_i\neq 0\}$, then the maps $\phi_i : V_i\subset \RRR P^n \to \RRR^n$ defined as: 
+    $$\phi_i(\left[ \frac{u_1}{u_i},\ldots ,1, \dots, \frac{u_{n+1}}{u_i} \right])= (v_1\ldots v_n)$$
+It is clear that the function is onto with inverse
+\begin{examples}[Finding asymptotes using projective geometry]
+    Let's suppose we are looking for the asymptotes of the curve:
+    $$2x^2 + 3x - 2xy -y -6 =0$$
+    Note that it indeed has because it is a hyperbola i.e. it has discriminant $(-2)^2 - (0)(2)>0$
+    First complete the homogeneous coordinates:
+    $$2x^2 + 3xz - 2xy -yz -6z^2 =0$$
+    The point at infinity is $z=0$ this leaves $2x^2 - 2xy = 0$ equivalently:
+    $$(x-y)x=0$$
+    This has two solutions in the Projective space $[1:1:0]$ and $[0:1:0]$. There is an asymptote for each of these.
+
+    In general the tangent space of this curve has the normal vector:
+    $$(4x+3z-2y)dx + (-2x-z)dy + (-y - 12z + 3x)dz$$
+    \begin{enumerate}
+        \item Substituting the first point $[1:1:0]$: produces $2dx - 2dy + 2dz$ which represents the curve $y=x+1$.
+        \item The second point corresponds to $-2dx + 0 + (-1)dz=0$ or $-2x=1$.
+    \end{enumerate}
+\end{examples}
+\begin{remarks}
+With this atlas its possible to show that $\RRR P^n$ is orientable for $n$ even. For the odd case, the non 
+orientability hasn't been showed yet.
+\end{remarks}

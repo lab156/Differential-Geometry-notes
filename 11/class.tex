@@ -1,0 +1,64 @@
+Let $\lambda \from G\times M \to M$ be an ``even action''. For any $p\in M$ and $g\in G$, there exists an $U = U_p$ such that $g_i(U)$ are disjoint. 
+\begin{ddef}
+The \textbf{quotient topology} that the open map $\pi\from M\to M/G$ produces if:
+\begin{enumerate}[1)]
+\item $\pi$ is open.
+\item $\pi$ is locally 1-1.
+\item Therefore $\pi$ is locally a homeomorphism.
+\end{enumerate}
+\end{ddef}
+The thing is that it is also a diffeomorphism; to see this:\\
+If $M$ is covered by $\{\phi_i,U_i\}$; $M/G$ is covered by the atlas $\{\psi_i = \phi_i \pi^{-1}, V_i = \pi_i(U_i) \}$ where $U_i= U_{p_i}$, $p_i\in M$ is a \textbf{$\mathbf{\pi}$-domain} i.e. is a domain in which $\pi$ is 1-1 and the domin of a chart.
+$$(\phi_i U_i) + \hat \atlas(M)$$
+where $\hat \atlas$ is a maximal atlas and $\pi_i= \pi|_{U_i}$.
+
+Given two charts $\psi_i,\psi_j $ and $q_0\in V_i\cap V_j$ and we need to show 
+$$\psi_i \circ \psi_j ^{-1} = (\phi_j\circ \pi_j ^{-1} )\circ (\pi_i\circ \phi_i ^{-1} )$$
+is smooth at $\psi_i(a_0)=\phi_i \pi_i ^{-1} (q_0) \in \RRR^n $ \\
+We need $\pi_j ^{-1} \circ \pi_i$ to be smooth at $p_0=\pi_i ^{-1} (a_0)$, since $\pi_j ^{-1} \circ \pi_i$ preserves orbits. So, $\pi_j ^{-1} \circ \pi_i p_0 = gp_0$ for some $g\in G$. 
+
+If we define:
+$$f=g ^{-1} \pi_j ^{-1} \circ \pi_i\from U_i\to M$$
+if suffices to show that $f$ = identity on $W$. Some subdomain $p_0\in W \subset U_i$. The useful neighborgood are smaller; let $W=f ^{-1} (U_i)$. Then $p_0\in W$ and $W$ is open. And for any $p\in W$ and $f(p)$ are both in $U_i$ and hence $p=f(p)$ (because $p,f(p)$ are in the same orbit).\\
+So $f=Id$ on $W$, so $\pi_j ^{-1} \circ \pi_i= \lambda_g$ a smooth map.\\
+So we have a smooth atlas on $M/G$ locally. $\psi_i=\phi_i\circ \pi_i ^{-1} $ locally, 
+$$\pi = \pi_i=\psi_i ^{-1} \circ \phi_i,\ \pi ^{-1} = \pi_i ^{-1} = \phi_i ^{-1} \circ \psi_i$$
+Thus, $\pi$ is a local diffeomorphism.
+
+Back to the homework problem
+\begin{displaymath}
+\xymatrix{ 
+S^1\times \cdots \times S^1\ar[dr]_f  &&& \RRR^n\ar[lll]_-{\epsilon=(e^{2\pi i x_1},\ldots,e^{2\pi i x_n} )} \ar[lld]^\pi \\
+                     & \frac{\RRR^n }{G} && }
+\end{displaymath}
+it can be seen from the diagram that $\pi=f\circ \epsilon \implies \pi\circ \epsilon ^{-1} =f$ 
+
+\emph{Next homework problem.} Let $(U,\phi)$ and $(\tilde U, \tilde \phi)$ be charts of $M$. If $U\cap\tilde U \neq \empty$ let the respective charts be called $(TU,Te)\ (T\tilde U,T\tilde e)$ then:
+\begin{gather*}
+(Te)\left(p,y^i \left.\frac{\partial}{\partial x_i} \right|_p\right)=(x_1,\ldots,x_n,y_1,\ldots, y_n)\\
+T\tilde e = (\tilde x^1,\ldots,\tilde x^n,\tilde y^1,\ldots, \tilde y_n)
+\end{gather*}
+Consider an alternative:
+\begin{align*}
+\tilde \phi(p,v) & = (\phi(p),d\phi(p)v) \\
+               &= (x_1(p),\ldots, x_n(p),v_1,\ldots, v_n)\\
+              v&= \sum v^i \frac{\partial}{\partial x_i} 
+\end{align*}
+then 
+\begin{gather*}
+\tilde \psi(p,v) = (\psi(p), d\psi(p)(v)) = (y_1(p),\ldots,y_n(p),w^1,\ldots, w^n)\\
+w^i=v(y_i)=\sum v_k \frac{\partial y_i}{\partial x_k} 
+\end{gather*}
+So we can write:
+\begin{align}
+F=\tilde \psi\circ \tilde \phi ^{-1} &= (\psi\circ \phi ^{-1} , d\psi\circ(d\phi) ^{-1} )\\
+                                     &= (\psi\circ \phi ^{-1} , d(\phi\circ\phi ^{-1} )) \label{eq:estrella}
+\end{align}
+$f=\psi\circ \phi ^{-1} $ has Jacobian Matrix:
+$$J=(df) = \left(\frac{\partial y_i }{\partial x_j} \right)_{n\times n} $$
+(1) Fix $(x_1,\ldots, v_n)$, consider the linear map
+$$(v_1,\ldots, v_n) \xrightarrow{J} (w_1,\ldots, w_n)$$
+calling [EQ\ref{eq:estrella}] $=(f,df)$ $$df(p)\begin{pmatrix} v_1 \\ v_m \end{pmatrix}$$
+The important thing is that:
+$$J=\left(\begin{array}{c|c} J & 0 \\ \hline  \text{stuff} & J \end{array}\right)$$
+The trick is to see that the determinant of the matrix is $J^2$ and thus nonnegative. This means that the manifold is orientable.

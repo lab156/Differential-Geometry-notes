@@ -1,0 +1,74 @@
+%10 de abril
+For
+$$\int_A f\circ \rho|\rho'| = \int{\rho(A)} f$$
+$A$ and $\rho(A)$ are just sets without orientation so for $A= [a,b]$ and $\rho>0$, we have that $\rho([a,b]) = [c,d]$. And for $\rho'([a,b])<0$ we have that $\rho([a,b])$ is also $[c,d]$, but in this case $\rho(a) = d$ and $\rho(b) = c$ because the function is decreasing.
+
+Let a surface be $\Sigma \subset \RRR^3$ parameterized by $\sigma(u,v)=(x,y,z)$.$$E=\sigma_u \sigma_u, \ F= \sigma_u \sigma_v, \ G = \sigma_v\sigma_v$$
+The differential of area is:
+$$\sqrt{\det g_{ij}} = \sqrt{\det \begin{pmatrix} E & F \\ F & G \end{pmatrix} } = \sqrt{EG-F^2}=ds$$
+This last expression can be further explained using the identity:
+$|u\times v|= |u||v|\sin(\phi)=\sqrt{|u|^2|v|^2 - (u\cdot v)^2}$. So we can match $\sqrt{EG-F^2} $ to $ |\sigma_u \times \sigma_v|$. Thus:
+$$\int_\Sigma ds = \int_U\sqrt{EG-F^2} dudv = \int_U|\sigma_u\times \sigma_v|dudv$$
+Example ( \iflabelexists{ejemplo:1}{\ref{ejemplo:1}}{Ejemplo de $S^2$}) for $\Sigma= S^2$, $\sqrt{g_{ij}}=\sqrt{\epsilon} = \sin(\phi)$
+$$A(\sigma) = \int_0^{2\pi} \int_0^\pi \sin(\phi) d\phi d\theta = 4\pi$$
+For $\Sigma=T^2$ and 
+\begin{gather*}
+\sqrt{g_{ij}} = r(a+ r\cos(\phi))\\
+A(\Sigma) = \int_0^{2\pi}\int_0^{2\pi} r(a+r\cos(\phi))d\theta d\phi = 2\pi^2ar
+\end{gather*}
+Which is related to the Pappus theorem.
+
+Invariant metrics on Lie Groups. Recall $X\in X^\infty(G)$ is left-invariant if for each $g\in G$, $X$ is $L_g$ related to itself:
+\begin{gather*}
+X_{gh} = dL_gX_h\\
+X_{L_g} = dL_g\\
+\phi = L_g
+\end{gather*}
+By prop: if $X,Y$ are both left-invariant vector field so is $Z=[X,Y]$. So $[X,Y]$ is defined as a Lie bracket on $\mathfrak{g}$.
+$$X_e,Y_e \in \tnsp_e G \simeq \mathfrak{g} \to X,Y \to [X,Y] \to [X,Y]_e$$ 
+
+\begin{teorema}
+    Let $X$ be a left-invariant vector field on $G$ and let $\Phi_t$ be the flow of $X$. Then 
+    \begin{enumerate}[a)]
+        \item $X$ is complete, so $\Phi_t \from G\to G$ is dened for all $t$ and is a 1-parameter group of diffeomorphism.
+        \item $\alpha(t) \from \Phi_t(e)$ is the 1-parameter group of $G$ with inital velocity $\alpha'(0) = X_e$.
+        \item The trajectory of $X$ through $g\in G$ is the left-translate of $\alpha(t)$ by $g$.
+            $$g\alpha(t) = \Phi_t(g) = g\Phi_t(e) = L_g\alpha(t)$$
+        \item $\Phi_t(g) = R_{\Phi_t(e)} (g)$ this is a better way; i.e. $\Phi_t= R_{\Phi_t(e)}\from G\to G$ so their differentials have to be the same.
+            $$d\Phi_t = dR_{\Phi_t(e)}$$ 
+    \end{enumerate}
+    \begin{proof}
+        Let $\beta(t) = g\Phi_t(e) = g\alpha(t)$ then $\beta(0)=g$, and 
+        \begin{gather*}
+        \beta'(t) = \left.\frac{d}{d\epsilon} g\Phi_{\epsilon+t} (e) \right|_{\epsilon=0}\\
+        = \left.\frac{d}{d\epsilon} L_g (\Phi_\epsilon(\Phi_t(e)))\right|_{\epsilon=0}\\
+        =dL_g(X_{\Phi_t(e)}) \underset{L.I.}{=} X_{L_g\Phi(e)} = X_{g\alpha(t)}\\
+        =X_{\beta(t)} \implies \beta(t) = \Phi_t(e) \implies \text{c}) \implies \text{d})
+        \end{gather*}
+        so $d\Phi_t  = dR_{\Phi(e)}$ \\
+        Next $\alpha(s+t) = \Phi_t(\Phi_s(e)) = \Phi_t(\alpha(s))$.\\
+        Let $g=\alpha(s) $ in c),get $\alpha(s+t)=\alpha(s)\alpha(t)\implies$ b) $\implies $ b) $\implies \alpha(t)$ defined for all $t\in \RRR$.
+    \end{proof}
+\end{teorema}
+
+\begin{ddef}[Conjugation Map]
+    $c_gh= ghg^{-1} = R_{g^{-1}} L_g h$ is an automorphism of $G$. Conjugation $c\from G\to G \to G$ defines a left action of $G$ on itself.\\
+    The \textbf{Adjoint} action is corresponding action of $G$ on $\mathfrak{g}$:
+    \begin{align*}
+        &\Ad_g\from \mathfrak{g} \to \mathfrak{g}\\
+        &\Ad_gX=dL_{g^{-1}}(dL_g(X))
+    \end{align*}
+    The infinitesimal version fo this is $\ad_X\from \mathfrak{g}\to  \mathfrak{g} $ defined by:
+    $$\ad_XY =\left. \frac{d}{dt}\Ad_{e^{tx}}Y\right|_{t=0}$$
+\end{ddef}
+
+\begin{teorema}
+    $\ad_XY=[X,Y]$
+    \begin{proof}
+        \begin{gather*}
+        (\ad_XY)_e =\left. \frac{d}{dt}dR_{e^{-tX}}dL_{e^{tX}}Y_e\right|_{t=0}\\
+        \left.\frac{d}{dt}dR_{e^{-tX}}Y_{e^{tX}}\right|_{t=0} = \lim_{t\to 0} \frac{1}{t} \left[d\Phi_{-t} (Y_{\Phi_t(e)})-Y_e\right]\\
+        = (L_XY)_e = [X,Y]_e
+        \end{gather*}
+    \end{proof}
+\end{teorema}

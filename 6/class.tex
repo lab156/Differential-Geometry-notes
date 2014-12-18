@@ -1,0 +1,42 @@
+\begin{ddef}[Tangent Vector]
+A tangent vector at $p\in M$ is a \textbf{linear derivation} on $C^\infty(p)$ \\
+The \textbf{Tangent Space} $\tnsp_p M$ (also written as $M_p$) is the space of all linear derivations at $p$ with vector space operations: $$ (av+bw)(f) = a\, v(f) + b\, w(f)$$
+\end{ddef}
+
+The \textbf{Local Representation} of projection of slot functions $r_i: \RRR^n \to \RRR$ and with a chart:
+\begin{gather*}
+\phi = (x_1,\ldots, x_n): V\to \RRR^n\\
+x_i=r_i\circ\phi
+\end{gather*}
+
+We note that $\displaystyle \frac{\partial}{\partial x_i}(f) = D_i(f\circ \phi^{-1})(\phi(p))= \left.\frac{\partial f\circ \phi^{-1}}{\partial x_i} \right|_{\phi(p)}$\\
+Note that apropiately: $$\frac{\partial x_j}{\partial x_i} = D_i (x_j\circ \phi^{-1})(\phi(p)) = D_i (r_j\circ \phi \circ \phi^{-1})(\phi(p)) = \left. \frac{\partial r_j}{\partial x_i} \right|_{\phi(p)} =\delta_{ij}$$
+
+\begin{teorema}
+If $\phi: V \to \RRR^n$ is a chart about $p\in M^n$; then the coordinate vectors:
+$$\frac{\partial}{\partial x_1},\frac{\partial}{\partial x_2},\ldots, \frac{\partial}{\partial x_n}$$
+Form a basis for $\tnsp_p M$.\\ In fact, any $v\in \tnsp_pM$ has a representation as:
+$$v = \sum_i v_i \frac{\partial}{\partial x_i} = \sum_i v(x_i) \frac{\partial}{\partial x_i} $$
+\begin{proof}
+To say that $\frac{\partial}{\partial x_1},\frac{\partial}{\partial x_2},\ldots, \frac{\partial}{\partial x_n}$ is the same as saying that for all $f\in C^\infty(p), \ v(f) =0$ for some $v\neq 0$. This is absurd because $v(x_i)= v_i$. \\
+To prove that the set $\frac{\partial}{\partial x_i}_1^n$ actually spawns $\tnsp_pM$ we use Taylor's theorem.
+\end{proof}
+\end{teorema}
+
+\begin{teorema}
+If $\tilde \phi =(\tilde x_1, \ldots , \tilde x_n)$ is another chart about $p$ and $v\in \tnsp_pM$ then $v$ may be expressed as: $$v=\sum_iv^i \frac{\partial}{\partial x_i} = \sum_i \tilde v^i\frac{\partial}{\partial \tilde x_i}$$ 
+where $$\frac{\partial}{\partial\tilde x_i} = \sum_i \frac{\partial x_i}{\partial\tilde  x_i}\frac{\partial}{\partial x_i}$$ and $\tilde v^j = \sum v_i \frac{\partial \tilde x_j}{\partial x_i}$
+\end{teorema}
+
+\begin{remarks}
+A vector in the tangent space $v\in \tnsp_pM$ may be regarded as:
+\begin{enumerate}[a)]
+    \item A linear derivation on $C^\infty(p)$. That is: $$v: C^\infty(p) \to \RRR$$
+    \item $v=\sum v_i \frac{\partial}{\partial x_i} $ with a rule for changing between charts $\phi \leftrightarrow \tilde \phi$
+    \item A equivalence class of curves $v=[\gamma]$ through $p$:
+        $$\gamma:(-\epsilon,\epsilon)\to M \text{ and } \gamma(0)=p$$
+\item What about the 1--tensors??????  
+\item There can be directional derivatives also.
+\end{enumerate}
+\end{remarks}
+

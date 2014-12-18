@@ -1,0 +1,119 @@
+%Tue Mar 18 21:13:21 EDT 2014
+\begin{teorema}
+$f\from M^m \to N^n$ smooth, $K=f^{-1}(a)$, assume $df_p\from \tnsp_pM \to \tnsp_{f(p)}N$ surjective (that is it has full rank) at each $p\in K$. Then $K$ is a regular submanifold of $M$, $\dim(K)=m-n$ furthermore, $\tnsp_pK= \ker(df_p)$
+\begin{enumerate}[1.]
+\item $S^n \subset \RRR^{n+1}$.
+\item $T^2 \subset \RRR^3$
+\item $H=SL_n(\RRR) = \{A=(a_{ij} \in M_n \from \det(A)=1 \}\subset G = GL_n$ where $G\subset \RRR^{n^2}$. Let 
+$$f\from G\to \RRR, f(A) = \det(A) = \sum_{\sigma\in S_n} \sgn(\sigma) \prod_{i=1}^n a_{i\sigma(i)}$$
+$H=f^{-1}$ if $A=A(t)$ is smooth curve in $G$, with tangent $v=\dot A$ then $\frac{d}{dt}\left(f(A(t)\right)=\det(A)\trace(A^{-1}\dot A)$ (Jacobi).\\
+For $A\in H$, $df_Av=\trace(A^{-1}v)$ In particular, $df_AA=n\neq 0$ do $df_A$ is surjective.\\
+So $H=f^{-1}(1)$ is a regular manifold of $G$ of dimension $k=\dim(SL_n) = n^2-1$. In fact $H=SL_n(\RRR)$ is a closed Lie subgroup of $GL_n$.\\
+Even further $V\in \ker(df_A) \iff \trace(A^{-1} V=0 \iff B=A^{-1} V$, where $\trace(B)=0 \iff V=AB$ where $\trace(B)=0$ lie in 
+\begin{gather*}
+\tnsp_AH = \{V=AB\in M_n\from \trace B =0 \} \\
+\xrightarrow{A=e} \tnsp_eH = \{V=B\in M_n\from \trace B =0 \} \\
+\xrightarrow{\phantom{A=e}} T_eSL_n(\RRR) = sl_n(\RRR) = \{B\from \trace B =0 \} = \mathfrak{h}
+\end{gather*}
+\end{enumerate}
+\end{teorema}
+
+\begin{remarks}
+\begin{enumerate}[a)]
+\item Fixed $B\in \mathfrak{h}$, we have a left invariant smooth vector field $V_A = V(A)=AB$.
+\item The mapping  $F\from TH \to H\times h$
+$$F(A,V) = (A,A^{-1}V)$$
+$F$ shows that $H=SL_n$ is parallelizable.
+\end{enumerate}
+\end{remarks}
+
+\begin{examples}
+$k=O(n) = \{A\in M_n \from A^TA=Id\} \subset G$ let $f(A)=A^TA-I \in Sym_n\{S\in M_n\from S^T=S\} \simeq \RRR^m$\\
+Then $f\from G\to \RRR^m$ is smooth and $k=f^{-1}(0)$, inverse image of $0\in \RRR^m$ let $A=A(t)$ be a curve in $G$, $V=\dot A$, then
+\begin{gather*}
+\frac{d}{dt} f(A(t)) = \frac{d}{dt}(A^TA - Id) = \dot A^TA + A^T \dot A\\
+\implies df_AV = V^TA + A^TV = B^T + B,
+\end{gather*}
+where $B=A^TV$ we need to show $df_A\from \tnsp_AG \to \tnsp_{f(A)} \RRR^m \simeq \RRR^m$ is surjective.\\
+So let $w\in \RRR^m$ , that is $w\in M_n$ is any symmetric $n\times n$ matrix: $w=w^T$. Set $V=\frac{1}{2}AW$, then 
+\begin{align*}
+df_AV &= \frac{1}{2}((AW)^T + A^T(AW))\\
+      &= \frac{1}{2}(W+W) = W
+\end{align*}
+where $A\in \mathfrak{k}$ do $df_A$ is surjective. So $k$ is regular submanifold. In fact, a closed Lie subgroup of $G$ of dimension 
+$$n^2 - \frac{(n+1)n}{2} = \frac{n^2-n}{2}$$
+Note: $A\in\mathfrak{k}$ satisfies $1=\det(A^TA) = \det(A)^2$ then $\det(A) = \pm1$. So $O(n)$ has (at least) two connected components $O^\pm (n)$.\\
+The components of $I$ is the special orthogonal group; so $SO(n)  = O^+(n)$. The tangent space to $K$ at $A$ is $$\tnsp_AK = \ker(df_A)$$
+we set 
+$$df_AV = V^TA + A^TV = 0$$
+$0=B^T + B$, $B=A^TV$ is skew symmetric.
+\begin{gather*}
+\tnsp_AK = \{V=AB\in M_n \from B+B^T =0 \}\\
+SO(n) = \tnsp_eK = \{B\in M_n \from B+B^T  =0 \}
+\end{gather*}
+\end{examples}
+
+\begin{enumerate}[1)]
+\item Left invariat verctor field for each fixed $B\in SO(n)$:
+$$V_A = AB$$
+\item $F(A,V) = (A,A^{-1})$ parallelizable $\tnsp O(n)$ $AA^T=Id$ note that this means the column o f $A$ is a orthonormal basis.
+\item $O(3)$ are the $3\times3$ orthogonal matrices and $SO(3)$ are the rotations of $\RRR^3$. $\dim(O(3)) = \frac{n^2-n}{2} = 3$ Consider the following 1 parameter subgroup of $SO(3)$:
+\begin{gather*}
+R_z(\theta) = \begin{bmatrix} 
+\cos(\theta) & -\sin(\theta) & 0 \\
+\sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{bmatrix}\\
+R_x(\theta) = \begin{bmatrix} 
+0 & 0 & 1\\
+\cos(\theta) & -\sin(\theta) & 0 \\
+\sin(\theta) & \cos(\theta) & 0 
+\end{bmatrix}\\
+R_y(\theta) = \begin{bmatrix} 
+\cos(\theta) & 0 &  -\sin(\theta) \\
+0 & 1 & 0 \\
+\sin(\theta) & 0 & \cos(\theta)   
+\end{bmatrix}
+\end{gather*}
+\end{enumerate}
+
+Differentiate and substitute $\theta=0$ then:
+\begin{gather*}
+R'_z(0) = \begin{bmatrix} 
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 
+\end{bmatrix}\quad
+R'_x(0) = \begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & -1 \\
+0 & 1 & 0
+\end{bmatrix}\\
+R'_y(0) = \begin{bmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+-1 & 0 & 0
+\end{bmatrix}
+\end{gather*}
+These form a basis for $K = SO(3)$ 
+$$ [A,B] = AB - BA $$
+How does this all fit in to the contxt of general Lie groups.\\
+\subsection{Lie Groups are parallelizable}
+Let $G$ be a Lie group and let $\mathfrak{g} = \tnsp_eG$. For any $g\in G$, let $L_g\from G\to G$ be left translation $L_gh = gh$ (the inverse of this is $L_{g^{-1}})$\\
+The map $L_g$ is a diffeomorphism. The differential is $dL_g=L_{g*}\from \tnsp G \to \tnsp G$. $L_{g*}$ can be used to translate tangent vectors around.
+
+\begin{ddef}
+$A$ is a vector field $V$ on $G$ is left-invariant. If it satisfies $V(gh)=L_{g*}V(h)$ ($V_{gh} = L_{g*}V_h)$ in particular for each fixed $b\in g$, get left-invariant. Vector field
+$$B_g = L_{g*}b ,\, B_e=b$$
+Turning thinsg around, any $V\in \tnsp_gG$ can be translated back to $e\from V \mapsto L_{g^{-1}*} V$ 
+\end{ddef}
+
+So have parallelizing map 
+\begin{gather*}
+F\from \tnsp G \to G\times g\\
+F(g,v) = (g, L_{g^{-1}*}V)
+\end{gather*}
+
+Suppose $H\subset GL_n$, if $h(t)$ is a curve in $H$, with $h(0)=h$, $\dot h(0) =V \in \tnsp_hH$ then for fixed $g\in H$:
+$$dL_gV = \frac{d}{dt} \left( L_gh(t) \right) = \frac{d}{dt} g\cdot h(t) |_{t=1}$$
+$dL_{g^{-1}} V = g^{-1}V = g\dot h |_{t=0} = gv$.

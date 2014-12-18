@@ -1,0 +1,133 @@
+% 3 de abril
+\begin{teorema}
+If $X_p\neq 0$ then there exists a chart $\phi=(x_1,x_2,\ldots, x_n)$ such that $X= \frac{\partial}{\partial X_1}$.
+\begin{proof}
+Firlst let $M=\RRR^n$ and $p=0$ and $X_p = \frac{\partial}{\partial X_1}$. Let $\Phi_t$ be a local flow of $X$ near 0 or define 
+$$F(r_1,\ldots, r_n) = \Phi_{r_1} (0,r_2,\ldots, r_n)$$
+Note that $F(0,r_2,\ldots,r_n) = \Phi_{r_1} (0,r_2,\ldots,r_n)$. So
+$$dF\left(\frac{\partial}{\partial r_i}\right)= \frac{\partial}{\partial r_i}$$
+for $i= 2,\ldots,n$.
+
+Also for $q=(q_1,\ldots, q_n)$ near 0 we have:
+\begin{gather*}
+F(r_1 + q_1,q_2,\ldots,q_n) = \Phi_{r_1} \circ \Phi_q(0,q_2,\ldots,q_n) = \Phi_{r_1}(F(q))\\
+dF\left(\frac{\partial}{\partial r_1} |_q \right) = \frac{\partial}{\partial r_1} F(r_1 + q_1,q_2,\ldots,q_n)|_{r_1=0} = \frac{\partial}{\partial r_1} \Phi_{r_1} (F(q)) | _{r_1=0}
+\end{gather*}
+i.e., $ \frac{\partial}{\partial r_1}$ is $F-$related to $X$. Since
+$$dF\left( \frac{\partial}{\partial r}|_0\right) = X_{F(0)} = X_0 = \frac{\partial}{\partial r_1} = dF\left(\frac{\partial}{\partial r_1} \right) = X_f$$
+ASo $dF_0 = Id$.
+\textbf{Proof of Proposition 7}\\
+So the inverse theorem says the $F$ is a local diffeomorphism so we ca define a chart $\phi=(x_1,x_2,\ldots,x_n)$ by $\phi=F^{-1}$. Since $\frac{\partial}{\partial r_1}$ is $F-$related 
+to $X$ and $X$ is $phi-$related to $\frac{\partial}{\partial r_1}$ i.e. $X=\frac{\partial}{\partial X_1}$. 
+In general if $\tilde X \in X^\infty(M),$ and $\tilde X_p\neq 0,\ p\in M$ take chart $\Psi$ about $p$ so $\Psi(p)=0,\ d\Psi(\tilde X_p) = \frac{\partial}{\partial r_1}$ 
+Then the vector field $X\Psi = d\Psi(\tilde X)$ is in the previous case.
+
+Let $\tilde \Psi= \phi\circ \Psi = (\tilde x_1,\ldots, \tilde x_n)$
+\begin{gather*}
+    d\tilde \Psi(\tilde X) = d\phi(d\phi(\tilde X)) = d\phi(X_\psi) \\
+    = d\phi(X) \circ \psi\\
+    = \left.\frac{\partial}{\partial r_1}\right|_{\phi\circ \psi} =\left. \frac{\partial}{\partial r_1}\right|_{\tilde \psi_1} \text{  i.e. } \tilde X = \frac{\partial}{\partial \tilde X_1}
+\end{gather*}
+\end{proof}
+\end{teorema}
+
+\begin{teorema}
+    If $X_1,\ldots, X_n$ are linearly independent Vector Fields near $p\in M$ and $[X_i,X_j]=0$ near $p$ and $\forall i,j$; then $\exists \phi= (x_1,x_2,\ldots,x_n)$ such that:
+    $$X_j = \frac{\partial}{\partial X_j}, \quad 1\leq j \leq k$$
+    \begin{proof}
+        Again let $M=\RRR^n$, and $p=0$.
+        $$X_j(0)= \frac{\partial}{\partial r_j} \quad j=1,\ldots,k$$
+        Let $X_j$ generate a local flow $\Phi_t^j\ j=1,\ldots,k$. Define 
+        $$F(r_1,\ldots,r_n)=\Phi_{r_1}^1\circ \Phi_{r_2}^2\circ \ldots\Phi_{r_k}^k(0,\ldots,0,r_{k+1},\ldots, r_n)$$
+        Since $[X_i,X_j]=0$, proposition ?? says that the flows commute
+        $$\Phi_{r_i}^i \circ \Phi_{r_j}^j= \Phi_{r_j}^j\circ \Phi_{r_i}^i$$
+        this means
+        $$F(r_1,\ldots, r_n) = \Phi_{r_j}^j \circ \Phi_{r_1}^1 \circ \Phi_{r_{j-1}}^{j-1}\circ  \Phi_{r_{j+1}}^{j+1} \circ \Phi_{r_{k}}^{k}(0,\ldots, r_{k+1},\ldots,r_n)$$
+        for $q$ near 0; therefore
+        $$dF\left(\left.\frac{\partial}{\partial r_j}\right|_q\right)= \frac{\partial}{\partial r_j}\left.F(q_1,\ldots, q_j+r_j,\ldots,q_n)\right|_{r_j=0}$$
+    \end{proof}
+\end{teorema}
+
+\subsection{Riemannian Manifolds}
+\begin{ddef}
+    A Riemannian metric on $M$ is a positive, definite, symmetric 2-covariant tensor on $M$ i.e. it is a smoothly varying inner product on each tangent space $g_p(v,w) = \langle v | w \rangle_p$. Thus, $g_p\from \tnsp_0M \times \tnsp_pM \to \RRR$ is:
+    \begin{enumerate}
+        \item bilinear
+        \item symmetric
+        \item positive define
+    \end{enumerate}
+    \textbf{Smoothness} means $\forall v,w\in X^\infty(M)$ it happens that $h(p)= g_p(v,w)$ is smooth.\\
+    A semi (or pseudo) Riemannian metric is the same except it is not positive definite. The condition the $\langle v,w\rangle= 0$ iff $v=0$ is replaced by \textbf{non-degeneracy} i.e. if $\forall w\ \langle v|w\rangle=0 \ \implies v=0$.
+\end{ddef} 
+
+
+\begin{examples}[Pseudo-Riemannian Spaces]
+    Let $M=\RRR^n$ let 
+    $$\langle v|w\rangle = -v_1w_1 - v_2w_2-\ldots - v_kw_k + v_{k+1}w_{k+1} + \ldots + v_nw_n$$
+    $k=1$ is the \textbf{Lorentz space:}
+    $$\langle v|w\rangle = -v_1w_1 + v_2w_2 + \ldots + v_nw_n$$
+\end{examples}
+
+\begin{ddef}
+    An \textbf{Isometry} of Riemannian Manifolds is a diffeomorphism
+    $$f\from (M,g) \to (\tilde M, \tilde g)$$
+    such that $g= f^* \tilde g$ that is:
+    $$g_p(v_p,w_p) = \tilde g_{f(p)} (df(v_p), df(w_p))\ \forall p\in M$$
+    and for all $v_p, w_p\in \tnsp_pM$. In this case $f^{-1}$ is also an isometry.\\
+    A submanifold $S\subset (\tilde M, \tilde g)$ inherits a metric $g= c^*\tilde g$ pull-back of $\tilde g$ by inclusion $\imath\from s\to \tilde M$. Also, an \textbf{immersion} $f\from M \to (\tilde M, \tilde g)$ induces a metric $g=f^* \tilde g$; then $f$ is a \textbf{local isometry}: near any $p\in M,\ \exists U, p\in $ such that $f|_u \from U\to f(U) $ is an isometry.
+\end{ddef}
+
+\subsection{Local Representation}
+As a tensor $g$ has local representation:
+$$g= \sum_{\alpha,\beta} g_{\alpha\beta} dx^\alpha \otimes dx^\beta$$
+$g_{\alpha\beta} = g_{\beta\alpha} = g(\frac{\partial}{\partial x_\alpha}, \frac{\partial}{\partial x_\beta} )$ with respect to a chart $\phi=(x_1,\ldots, x_n)$.\\
+Smoothness of $g$ is equivalent to smoothness of $g_{\alpha\beta}$ for all $\alpha, \beta$.
+
+\begin{ddef}
+    The form $dx^\alpha \otimes dx^\beta$ is the bilear form defined by 
+    $$dx^\alpha \otimes dx^\beta \left(\frac{\partial}{\partial x_i}, \frac{\partial}{\partial x_j}\right)= \delta_{\alpha_i}\delta_{\beta_j}$$
+\end{ddef}
+
+\subsection{Parameterized Surfaces in $(\RRR^3,\langle \rangle)$}
+Let $\sigma(u,w) = (X(u,v),y(u,v),z(u,v))$ be an immersion $\sigma: W \to \RRR^3$ The differential of $\sigma$ is:
+\begin{gather*}
+    U=d\sigma\left( \frac{\partial}{\partial u}\right) = X_u \frac{\partial}{\partial x} + y_n  \frac{\partial}{\partial y} + z_u  \frac{\partial}{\partial z} \\
+        V = d\sigma \left( \frac{\partial}{\partial u }\right) = x_v \frac{\partial}{\partial x} + y_v  \frac{\partial}{\partial y} + z_v  \frac{\partial}{\partial z} 
+    \end{gather*}
+    This induces a metrix in $W$ that is given by:
+    \begin{align*}
+        E&=g_{u,u} = \langle U | V \rangle _{\RRR^3} = X^2_u + Y^2_u + Z^2_u = \sigma_u \cdot \sigma_u\\
+        F& = g_{u,v} = g_{v,u} = \langle U | V\rangle = \sigma_u \cdot \sigma_v\\
+        G& =  g_{v,v} = \langle V | V\rangle = \sigma_v \cdot \sigma_v
+    \end{align*}
+
+    Note that $E,F,G\from W\to \RRR$. Then 
+    $$g= Edu \otimes du + Fdu\otimes du + Fdv\otimes du + Gdv\otimes dv$$
+    Classical Motivation F.F.F. $I_p(v) = g_p (v,v)$. If 
+    $$V= a\frac{\partial}{\partial u} + b \frac{\partial}{\partial v}$$  
+    $$I(v) = Ea^2 + F(ab+ba) +Gb^2$$
+
+    \begin{ddef}
+        \textbf{The squared length element} is defined as:
+        $$ds^2 = Edu^2 + 2Fdudv + Gdv^2$$
+        If $\sigma(t) \subset \Sigma = \sigma(w) $ is a curve; the squared speed, of $\gamma(t) $ is expressible in terms of $u(t),v(t)$. First write
+        $$\gamma(t) = \sigma(u(t),v(t))$$
+        and define the chart:
+        $$\phi = \sigma^{-1} = (u,v) = (u(t),v(t)) = \phi(\gamma(t))$$
+        we write:
+        \begin{align*}
+            \left(\frac{\partial s}{\partial  t}\right)^2 &= \dot \gamma\cdot\dot\gamma \\
+    =                                                      &g(\dot u \frac{\partial}{\partial u} + \dot v\frac{\partial}{\partial v},\dot u \frac{\partial}{\partial u} + \dot v\frac{\partial}{\partial v}) \\
+    =                                                      &E\dot u^2 + 2F \dot u\dot v = G \dot v ^2
+        \end{align*}
+    \end{ddef}
+
+    \begin{ddef}
+        If $\gamma \from (a,b) \to (M,g)$ is a piecewise smooth curve in $M$. The \textbf{length of }$\gamma$ is:
+        \begin{align*}
+            L(\gamma) &= \int_\gamma ds\\
+                      &= \int_a^b|\dot \gamma(t)|dt, \quad |\ |= \sqrt{g(\ )}\\
+                      &= \int_a^b \sqrt{Eu^2 + \ldots + Gv^2}dt
+        \end{align*}
+        Note: by change of variable formula if $h\from [c,d] \to [a,b]$, then $L(\gamma\cdot h) = L(\gamma)$
+    \end{ddef}

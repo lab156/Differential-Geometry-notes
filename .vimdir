@@ -1,0 +1,2 @@
+"PARA GUARDAR Y CORRER PDFLATEX RAPIDO 
+map <Leader>a :w <bar> !pdflatex this_class.tex<CR>

@@ -1,0 +1,72 @@
+\begin{ddef}[Lie Groups]
+is a group $G$ which is also a smooth manifold such that the group operation and the inverse are smooth, $\mu: G\times G \to G \ g,h\mapsto g\cdot h$ and $\i: G\to G\ g\mapsto g^{-1}$\\
+A \textbf{Homomorphism} between Lie groups is a homomorphism $h:G\to H$ that is also a smooth map
+\end{ddef}
+
+\begin{examples}
+$GL_n(\RRR)$
+\end{examples}
+
+\begin{ddef}[Lie Groups Homomorphisms]
+A \textbf{Homomorphism} between Lie groups is a homomorphism $h:G\to H$ that is also a smooth map
+\end{ddef}
+
+\begin{examples}
+
+\begin{itemize}
+\item If $G=(\RRR,+)$ and $H=(\RRR^+,\cdot)$ then $\phi(x)=e^x$ is a homomorphism between groups.
+\item With $G=(\RRR,+)$ and $H\sim S^1 =\{z\in \mathbb{C}: |z|=1,\cdot \}$ $\phi(x)=e^{ix}$ (This is not an isomorphism)
+\item $T^n\cong(S^1)^n$ where $T^n$ is the $n$th torus.????
+\item $S^3\cong SU(2) \simeq Sp(1)$ where  ???? $SU(2)=\{2\times 2 \text{ complex matrices }A: \ A^{-1} = \bar A^T\} $ \\
+And $Sp(1)$ are the unit quaternions $=\{q= a+bi+cj+dk : |q|=1 \}$ and $i^2=j^2=k^2=ijk=-1$ using the function: 
+    $$ q\in Sp(1) \mapsto \begin{bmatrix} a+bi & c+di \\ -c+di & a-bi \end{bmatrix}\in SU(2) $$
+\end{itemize}
+\end{examples}  
+
+\begin{ddef}[Smooth action of a Lie Group on a Manifold]
+is a smooth map $\lambda: G\times M \to M$ and $g,m \mapsto g\bullet m = \lambda_g m $ which satisfies:
+    \begin{itemize}
+    \item $\lambda_e=Id_M$ (the identity map $e\bullet m=m$).
+    \item $\lambda(gh,m) = \lambda(g, \lambda(h,m))= (gh)m = g\cdot (h\bullet m)$
+    \item $\forall g\in G \ \lambda_g: M\to M\ m\mapsto gm$ is a diffeomorphism of $M$ onto $M$.
+    \end{itemize}
+\end{ddef}
+
+\begin{examples}
+\begin{itemize}
+\item $G=U(1)=S^1=\{e^{i\theta}\}$\\
+$M=S^3=\{(z,w): z,w\in \mathbb{C}, \ |z|^2+|w|^2=1 \}$\\
+The action is defined as: $\lambda(e^{i\theta},(z,w)) = (e^{i\theta}z, e^{i\theta}w)$
+\item $G=Sp(1),\ M=S^2=\{$ LOST THIS PART!!!!!!!!!!!!
+\end{itemize}
+\end{examples}
+
+\begin{ddef}[Tangent Vectors as Linear Derivations]
+Let $v=v_{x^0}=(v^1,\ldots , v^n)$ be a vector at $x^0\in \RRR^n$. And let $f(x)=f(x_1\ldots x_n)$ be smooth at $x^0$. \underline{Then} $v$ operates on $f$ via: $$v(f)=v\cdot \nabla f(x^0) = \sum_{j=1}^n v_j \partial_j f(x^0)$$
+In particular note that $v(x_k)= \sum v_j\partial_j x_k = v_k$. 
+\end{ddef} 
+
+\begin{remarks}
+    Note that if $x(t)$ is a curve and $x^0=x(t_0)$ and $v=x'(t_0)$, then  $h(t)=f(x(t))$ and $h'(t)=\nabla f(x(t)) \cdot x'(t)= v_{x^0}(f)$ (in this case I think the curve has to be in $\RRR^n$ or the $\nabla $ will not make sense).
+\end{remarks}
+
+\begin{ddef}[Linear Derivation]
+$v=v_{x^0}$ is a linear derivation iff for all $f,g\in C^\infty (x^0)$ and $a,b\in\RRR$.
+\begin{itemize}
+\item $v(\alpha f + \beta g) = \alpha v(f) + \beta v(g)$
+\item $v(f\, g) = f(x^0)v(g) + g(x^0)v(f)$
+\end{itemize}
+\end{ddef}
+
+\begin{teorema}
+A Linear Derivation $v: C^\infty(x^0) \to \RRR$ may be identified with a tangent vector at $x^0 \in \RRR^n$.
+\begin{proof}
+It can be shown that $v(1)=0$ (the derivation of a constant function is zero).\\
+If $f(x)$ is smooth at $x\in U$, some domain that contains $x^0$; we will use Taylor's formula: 
+    \begin{gather*}
+   f(x) = f(x^0) + (x-x^0)\cdot \nabla f(x^0) + Q(x-x^0) \text{ where } Q=\sum_{ij} (x_i - x_i^0)(x_j-x_j^0)Q_{ij}(x)
+    \end{gather*}
+    This is the formula:
+    $$Q_{ij}(x)=\int_0^1 (1-t)f_{ij}(x^0 + t(x-x^0))dt$$
+\end{proof}
+\end{teorema}

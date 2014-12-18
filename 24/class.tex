@@ -1,0 +1,85 @@
+% 17 de abril
+``Lie groups are orientable''\\
+Say two ordered bases of vector spaces have the same orientable if the Change of Basis matrix has positive determinate.
+
+Define an orientation of vector spaces to be an equivalence class of this relationship.
+
+\begin{ddef}
+A \textbf{Frame} on an open set $U\subset M^n$ is an $n$-tuple $(x_1,\ldots, x_n)$ is (possibly disjoint) vector fields on $U$ such that $\forall \, p\in U\; (x_1(p),\ldots, x_n(p))$ is an ordered basis for $\tnsp_p M$.
+\end{ddef}
+
+\begin{itemize}
+\item Say a manifold is paralelizable if there exists a smooth global frame i.e. if there are $x_1,\ldots, x_n$ smooth vectors fields such that $\forall\, p\in M([X_1(p), \ldots, X_n(p)]) $ is a basis for $\tnsp_p M$.
+\item Let $(V_1, \ldots, V_n)$ be a basis for $\tnsp_e 0$ define $V_j$ by 
+$$V_j (g) = L_{g^*} (V_j)$$
+\end{itemize}
+
+DoCarmo problem \#1\\
+The antipodal mapping $A\from S^n \to S^n$ $ p\mapsto -p$ is an isometry.\\
+To show that $A$ is an isometry: $dA = -Id$
+\begin{gather*}
+\Gamma \from S^n \to \RRR P^n\\
+p\mapsto [p]\\
+p\in S^n , \quad u,v \in \tnsp_p S^n
+\end{gather*}
+We define: $\langle d\pi_p(u),d\pi_p(v) \rangle_{\pi(p)} = \langle u | v\rangle_p$ checking if the metric is well-defined. If $\pi = \pi\circ A$ this implies that
+$$d\pi_{-p} = d\pi_p \circ dA_{A(p)}$$
+then
+$$\langle d\pi_{-p}(-u), d\pi_{-p}(-v)\rangle = \langle d\pi_{-p}\circ dA(u) | d\pi_{-p} \circ dA(v) \rangle$$
+
+\subsection{Matrix Lie Groups}
+$GL_n(\RRR) \subset \RRR^{n^2}$ Left invariant vector field.
+$$A\in \lie{g} = gl_n(\RRR) \to X_m= M\,A$$
+We define the commutator operator 
+\begin{gather*}
+[A,B] = A\,B - B\,A
+\Ad_M U= M UM^{-1}
+\end{gather*}
+
+if $e^{tX} = M(t)$ and $M(0)=Id$ and $M'(0)=X\in \lie{g}$
+\begin{gather*}
+    \left.\frac{d}{dt} \Ad_{M(t)} U \right|_{t=0} =     \left.\frac{d}{dt}\left( MUM^{-1} \right) \right|_{t=0}\\
+    = \dot M U M^{-1} + M U (\dot M^{-1})|_{t=0} = \dot M_0 U - U\dot M_0 = XU-UX= [X,U] = \ad_X(U)\\
+    \dot M M^{-1} = 0 \\
+    (\dot M ^{-1}) = - M^{-1}\dot M M^{-1}
+\end{gather*}
+assuming Ad-invariance
+$$ \langle \Ad_M U | \Ad_M V \rangle = \langle U, V \rangle \implies \langle [X,U] | V \rangle + \langle U|[X,V] \rangle$$
+
+\subsection{Covariant Derivative}
+\begin{ddef}
+    Given smooth vector fields $X,Y\in X^\infty(M)$, we define the \emph{covariant derivative} (affine connection) a new vector field $\nabla_xY \in X^\infty(M) $ that satisfies:
+    \begin{enumerate}
+        \item $\nabla_x(Y+Z) = \nabla_X Y + \nabla_XZ$
+        \item $\nabla_{X+Y} Z = \nabla_X Z + \nabla_Y Z $
+        \item $\nabla_{fX}Y = f\nabla_XY,\; f\in C^\infty(M)$
+        \item $\nabla_X fY = X(f) Y + f\nabla_XY$
+    \end{enumerate}
+\end{ddef}
+    Comparing $L_XY $ and  $\nabla_XY$ write $\phi= (X_1,X_2,\ldots, X_n)$ 
+    \begin{gather*}
+        Y=  \sum b^j \frac{\partial}{\partial x_j} \\
+        \nabla_XY = \nabla_X \sum_j b^j \frac{\partial}{\partial x_j}\\
+        = \sum_j X(b^j) \frac{\partial}{\partial x_j} + b^j\nabla_X \left.  \frac{\partial}{\partial x_j} \right|_p
+    \end{gather*}
+    Where $X= \sum a^i  \frac{\partial}{\partial x_i}, \ Y = \sum b^j \frac{\partial}{\partial x_j}$.
+
+    \begin{ddef}[Cristoffel Symbol]
+        \begin{gather*}
+            \Gamma_{i\,j}^k: \nabla_{ \frac{\partial}{\partial x_i}} \frac{\partial}{\partial x_j} = \sum_k \Gamma_{i\,j}^k  \frac{\partial}{\partial x_k}\\
+            \nabla_X Y = \sum_{i\, j} a^i\left(  \frac{\partial b^j}{\partial x^i}  \frac{\partial}{\partial x_i} + \sum_k b^j \Gamma_{ij}^k  \frac{\partial}{\partial x_k}\right)
+        \end{gather*}
+    \end{ddef}
+    $Y= Y(t)$ is a smooth vector fields alogn the curve $\gamma(t)$ is parallel along $\gamma$ if:
+    \begin{gather*}
+        \frac{D}{dt}Y = \nabla_{\dot \gamma}Y =0\\
+        \frac{D}{dt}Y = \sum_k \left( b^k + \sum_{ij} b^j\gamma^i \Gamma_{ij}^k \right) \frac{\partial}{\partial x^k} 
+    \end{gather*}
+    For $Y$ parallel: $0=\dot b^k + \sum_{ij} b^j \dot \gamma^k  \Gamma_{ij}^k$ for $k=1,\ldots, n$.
+    \begin{ddef}
+        The smooth curve $\gamma(t)$ is a geodesic iif:
+        \begin{gather*}
+            \frac{D}{dt} \dot \gamma = \nabla_{\dot \gamma} \dot \gamma =0\\
+            b^k \longrightarrow \dot \gamma^k = (\dot{x_k\circ \gamma})
+        \end{gather*}
+    \end{ddef}

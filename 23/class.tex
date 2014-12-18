@@ -1,0 +1,105 @@
+%15 de abril
+New scientist wrinkled doughnut solves geometrical mystery.
+
+\begin{teorema}[Gromov]
+There exists a $c^1-$ison embedding of the flat torus in $\RRR^3$.
+\end{teorema}
+
+Continuing with the last lecture, we have:
+\begin{gather*}
+\Ad_g X = dR_{g-1}dL_g(X)\\
+\ad_XY = \frac{d}{dt} \Ad_{e^{tX}}Y|_{t=0} \overset{\text{Prop}}{=} L_XY \overset{\text{Prop}}{=}[X,Y]
+\end{gather*}
+
+\begin{ddef}
+A \textbf{Riemannian metric} $\langle,\rangle$ on $G$ is left invariant if, for any $g\in G$ $L_g\from G\to G$ is an isometry i.e. $L^{-1}_g\langle\ \rangle = \langle\ \rangle$, i.e.
+\begin{gather}
+\forall g,h\in G,X,Y\in T_h G\label{eqs}\\
+\langle X,Y\rangle = \langle dL_gX, dL_gY\rangle \label{eqss}
+\end{gather}
+\end{ddef}
+Specialized (\ref{eqs}) to $h=f,\  g=f^{-1}, \ X=U,\ Y=V$
+$$\langle U, V \rangle_f  \overset{\text{Using (\ref{eqss})}}{=} \langle dL_{f^{-1}}(U)|  dL_{f^{-1}}(V) \rangle_e$$
+
+To prove the first direction ((\ref{eqs}) $\implies$ (\ref{eqss})). Try to define left-invariant metric from a given one at $e$: Assume $\langle \; \rangle_e$ use (\ref{eqss}) to define $\langle , \rangle_f$. 
+
+On the other hand if we assume (\ref{eqss}) and want to prove (\ref{eqs}).
+\begin{enumerate}[1)]
+    \item $f=h,\ U=X,\ V = Y$: 
+        $$ \langle X, Y \rangle_L = \langle d\, L_{h^{-1}} X, d\, L_{h^{-1}}Y\rangle_e$$
+    \item $f=gh,\ U = d\, L_gX,\ V=d\, L_g Y,\ X,Y\in \tnsp_hG$
+        \begin{align*}
+            \langle d\, L_gX, d\,L_gY\rangle_{gh} &= \langle d\, L_{f^{-1}} U , d\, L_{f^{-1}} V \rangle_e \\
+                                                  &= \langle d\,L_{h^{-1}g^{-1}} d\,L_g X , d\, L_{h^{-1}g^{-1}} dL_g Y \rangle_e\\
+                                                  &= \langle d\, L_{h^{-1}}X, d\, L_{h^{-1}} Y \rangle_e 
+        \end{align*}
+        And this implies the LHS (\ref{eqs}) = RHS (\ref{eqs})
+\end{enumerate}
+Likewise a metrix is right-invariant if for each $g\in G$ and $R_g: G\to G$ is an isometry. We use $\forall g,h \in G$ where $X,Y\in \tnsp_h G$. 
+\begin{gather*}
+    \langle X|Y \rangle_h \overset{(\ref{eqss})}{=} \langle d\, R _{g^{-1}} X | d\, R_gY \rangle_{g^{-1}h} \\
+    \langle X|Y\rangle_h \overset{(\ref{eqs})}{=} \langle d\, L_g X | d\, L_g Y \rangle _{gh}
+\end{gather*}
+Now suppose that $\langle\ ,\ \rangle$ is a bi-invariant (left and right invariant) then $\langle \ \rangle_e$ is  $\Ad$-invariant.
+
+\begin{gather*}
+\forall g\in G,\ X,Y\in \lie{g}\simeq \tnsp_e G  \\
+\langle \Ad_g X | \Ad_g Y \rangle_e = \langle d\,R_{g^{-1}}dL_g X | d\, R_{g^{-1}} d\, L_g Y \rangle_e\\
+\overset{h=g}{=} \langle dL_g X | dL_g Y \rangle_g \overset{h=e}{=} \langle X| Y\rangle_e
+\end{gather*}
+conversely, if a metric on $\tnsp_eG = \lie{g}$ is Ad-invariant and we define $\langle\, \rangle$ on $G$. To be left-invariant, then the result is also right invariant.
+
+\begin{teorema}
+    If $\langle \ , \  \rangle$ is a bi-invariant metric on $G$ and $V\in g = \tnsp_e G$; then $\ad_V$ is skew-adjoint with resp to $\langle \, \rangle$ i.e. $\forall\, U,W\in \lie{g}$
+    $$\langle \ad_V U, W\rangle \underset{\text{sk. adj.}}{=} - \langle U, \ad_V W \rangle$$
+DoCarmo writes that for $e$:
+$$\langle [U,V],W \rangle = \langle U, [V,W]\rangle \overset{h=e}{=} \langle X|Y \rangle_e$$
+Compare to the scalar triple product in $\RRR^3$
+$$U\times V\cdot W = U\cdot V \times W$$
+\begin{proof}
+    Let $g= e^{tV}$, then 
+    \begin{gather*}
+        0=\left. \frac{d}{dt}\langle U, V \rangle \right |_{t=0}\\
+        = \left. \frac{d}{dt} \langle \Ad_gU, \Ad_g W \rangle \right|_{t=0}\\
+    \end{gather*}
+    Conversely, condition skew-adjoint can be shown to imply Ad-invariance. Hence, a metric on satisfying Self-Adjoint induces a bi-invariant metric on $G$.
+\end{proof}
+\end{teorema}
+
+\begin{ddef}
+    The \emph{Cartan-Killing} form $K\from \lie{g}\times \lie{g} \to \RRR$ is the symmetric bilinear form with formula:
+    $$K(X,Y) = \trace(\ad_X \ad_Y)$$
+    \end{ddef}
+    \begin{teorema}
+        $K$ is self-adjoint i.e. 
+        $$K([U,V],W)=K(U,[V,W])$$
+        \begin{proof}
+            First note the Jacobi Identity:
+            \begin{gather*}
+                = [[U,V],W] + [[V,W],U] + [[W,U],V]\\
+                \implies \ad_{[U,V]}W = \ad_U \ad_V W - \ad_V\ad_U W
+            \end{gather*}
+Next note that for linear transformations $A,B,C\from \lie{g} \to \lie{g}$
+\begin{gather*}
+    \trace(A\, B\, C) = \trace(A^{-1}A\, B\, C\, A) = \trace(B\,C\,A)\\
+    K([U,V],W) = \trace(\ad_{[U,V]} \ad_W)\\
+        =\trace(\ad_U \ad_V \ad_W - \ad_V\ad_U\ad_W)\\
+        =\trace(\ad_U(\ad_V \ad_W - \ad_W \ad_V))\\
+        =\trace(\ad_U\ad_{[V,W]}) = K(U,[V,W])
+    \end{gather*}
+\end{proof}
+\end{teorema}
+
+\begin{teorema}
+    $K$ satisfies the Self-Adjoint condition $K([U,V],W)= K(U,[V,W])$
+    \begin{itemize}
+        \item For semi-simple Lie algebras $K$ is non-degenerate.
+        \item For compact Lie groups $G,\ K$ is negative definite. So, $\langle,\rangle=-k$ is positive definite.
+    \end{itemize}
+\end{teorema}
+
+\begin{examples}
+    For $G=SO(3)$, get bi-invariant metric
+    $$\langle \ | \ \rangle = -k \quad [\ , \ ] \leftrightarrow x$$
+    \emph{Great Exercise}: this has to do a lot with rigid body Mechanics
+\end{examples}

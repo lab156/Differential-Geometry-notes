@@ -1,0 +1,18 @@
+%latex
+\subsection{Stereographic Projection }
+
+\begin{ddef}[$S^n$]
+$S^n\subset \RRR^{n+1} =\{ (u_1\ldots u_n,\, v): \ u_1^2 +\ldots + u_n^2 + v^2 =1\}$
+\end{ddef}
+
+\begin{teorema}
+If $M$ has an atlas with 2 charts with connected overlap $V\cap \tilde V$ then $M$ is orientable
+\begin{proof}
+Within the $V \cap \tilde V$ we have by definition that $\det J \neq 0$. Moreover, $\det J$ is contiuous, then is does not change sign and thus $M$ is orientable.
+\end{proof}
+\end{teorema}
+
+The following parametrization of the \textbf{Stereographic Projection}: $\textbf{x}: \RRR^n \to S^n$ is defined as:
+    $$ \textbf{x}(x)= \left( \frac{2x}{|x|^2+1}, \frac{|x|^2-1}{|x|^2+1} \right) = (u,v) $$
+The inverse of this parametrization i.e. the charts are: $\phi:S^n\to \RRR^n$
+    $$\phi(u,v)= \frac{u}{1-v}$$

@@ -1,0 +1,49 @@
+\NeedsTeXFormat{LaTeX2e}[2000/01/01]
+\ProvidesPackage{general}[2014/01/05 Paquete General de Apuntes]
+
+\RequirePackage{euscript}
+\RequirePackage{amsmath,amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs}
+\RequirePackage{enumerate}
+\RequirePackage{amsthm}
+%%\RequirePackage[all]{xy}
+
+
+
+\newcommand{\RRR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\MM}{\EuScript{M}}
+\newcommand{\EEE}{\EuScript{E}}
+\newcommand{\borel}{\mathbf{\EuScript{B}}}
+\newcommand{\atlas}{\mathcal{A}}
+\newcommand{\vesp}{\EuScript{X}}
+\newcommand{\vespY}{\EuScript{Y}}
+\newcommand{\tnsp}{\text{\textbf{T}}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\trace}{\operatorname{trace}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\ad}{\operatorname{ad}}
+
+\newcommand{\from}{:\,}
+
+\newtheorem{remarks}{Remarks}
+\newtheorem{teorema}{Theorem}
+\newtheorem{corol}{Corollary}
+\newtheorem{examples}{Examples}
+\newtheorem{lema}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{ddef}{Definition}
+
+%Lie groups are so important that we have to do an specific command
+\newcommand{\lie}[1]{\mathfrak{#1}}
+
+%To reference labels in between lecture files
+%USAGE: iflabelexists{labelName}{\ref{labelName}}{else statement}
+\newcommand{\iflabelexists}[3]{\@ifundefined{r@#1}{#3}{#2}}
+
+\endinput

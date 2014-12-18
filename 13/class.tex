@@ -1,0 +1,73 @@
+%27 de Febrero
+Last time inmersion embedding immersion doesn't lose any dimension.
+\begin{ddef}
+If $(\phi,V)$ and $\phi=(x_1,x_2,\ldots, x_m)$ is a chart on $M^n$ a $k-$slice of $\phi$ is a map $(\phi_k,V_k)$, where
+\begin{gather*}
+V_k = \{p\in V\from x_{k+1} = x_m =0\},\\
+\phi_k=(x_1,\ldots, x_k),\quad \phi_k\from V_k \to \RRR^k
+\end{gather*}
+\end{ddef}
+
+\begin{ddef}
+$k\subset M$ is a (Regular) Submanifold of $M$ if $k$ a topological subspaces of $M$ and a smooth manifold with atlas consisting of slices of charts in $\hat \atlas(M)$.\\
+in this case $i: k\to M$ is an embedding submanifolds in a weaker sense.
+\end{ddef}
+
+\begin{teorema}
+Let $M^m$ and $N^n$ be a smooth manifolds (assume $m$ is 2nd countable).\\
+Let $f\from M\to N$ be a smooth map; and  let $q\in \NN$ lie in the image if $f$. If $df_p \from \tnsp_pM \to \tnsp_qN$ is sujective at each $p\in f ^{-1} (a)$, then $k= f ^{-1} (a)$ is a (regular) submanifold of $M$ of dimension $k=m-n$ ($q$ is a ``regular-value'').
+\end{teorema}
+
+\begin{remarks}
+This follows the ``Nullity + Rank'' theorem of linear algebra.\\
+If $T\from \RRR^m \to \RRR^n$ linear map then:
+$$m=\dim(\ker\,T) + \rank(T)$$
+If $T$ is onto then $\rank(T)=n$
+$$m=\dim(T ^{-1} (0)) + n$$
+so $k=\dim(T ^{-1} (0)) = m-n$
+$$k=T ^{-1} (0) = \ker(T)$$
+Now if $p\in K$, let 
+$$T=df_p \from \tnsp_pM^n \to \tnsp_qN^n$$
+we can make the identification:
+$$\tnsp_pK \cong \ker(T) \subset \tnsp_pM$$
+so $\dim(k)= \dim(\tnsp_pM) = m-n$. Note that Lie groups are submanifolds of Euclidean spaces.
+\end{remarks} 
+
+\begin{examples}
+Uses of the implicit function theorem $f\from \RRR^{n+1} \to \RRR$, 
+$$f(x)=f(x_1,\ldots, x_{n+1})=x\cdot x \sum_{i=1}^{n+1} x_i^2$$
+$S^n=f ^{-1} (1)$ note $df_xv = \frac{d}{dt}(x(t)\cdot x(t))|_{t=t_0} = 2x(t)\cdot x(t)|_{t=t_0}$ (where $v=\dot x(t)$) $=2v\cdot x=2x\cdot v$.\\
+So $df_xv=2x\cdot v$ is surjective for $x\neq 0$ (just take $v=x$).\\
+Then $S^n= f ^{-1} (1)$ is a regular submanifold of $\RRR^{n+1}$ of dimension $(n+1) - 1=n$.\\
+Also, $$\tnsp_xS^n= \ker (df_x)=x^\perp=\{v\in \RRR^{n+1} \from x\cdot v=0 \}$$ There is a neat way of embedding (Trick) of $\tnsp S^n$ into $\RRR^{2n+2}$
+Take:
+$$(x,v) \in \RRR^{2n+2} \mapsto \tnsp S^n \simeq \{(x,v) \in \RRR^{2n+2}\from f(x)=1, \, df_xv=0 \}$$
+$=F ^{-1} (0)$, where $F(x,v)=(f(x)-1, df_xv) = (\tilde f(x), f'(x,v))$.\\
+$F\from  \RRR^{2n+2}   \to \RRR^2$ satisfies the hypothesis of the Implicit functions theorem. We discuss the surjectivity of:
+$$(dF)= \left( \begin{array}{c|c} \frac{\partial f}{\partial x} & \frac{\partial f}{\partial v} \\\hline \frac{\partial f'}{\partial x} & \frac{\partial f'}{\partial v} \end{array} \right)= \begin{pmatrix} J& 0 \\ m & J \end{pmatrix}$$
+same structure as in the HW problem.
+\begin{gather*}
+\left(\begin{array}{ccc|ccc}
+2x_1 & \ldots & 2x_{n+1} & & 0 & \\
+2 & \ldots & 2 & 2x_1 & \ldots & 2x_{n+1}
+\end{array} \right)\\
+df_x\begin{pmatrix} x\\-1 \end{pmatrix} = \begin{pmatrix} 2x\cdot x \\0 \end{pmatrix}=\begin{pmatrix} 2  \\0 \end{pmatrix}\\
+df_x\begin{pmatrix} 0\\x \end{pmatrix} = \begin{pmatrix} 0\\2 \end{pmatrix} 
+\end{gather*}
+In conclusion:
+$$\tnsp S^n \subset \RRR^{2n+2}$$ 
+Second Example: Let $f\from \RRR^3\to \RRR$
+$$f(x,y,z)= z^2 + (\sqrt{x^2+y^2}-A)^2 -a^2$$
+using polar coordinates: $z^2 + (r-A)^2 - a^2=0$\\
+Using $r_x= \frac{x}{r}$ and $r_y= \frac{y}{r}$ 
+\begin{align*}
+(df)&=(f_x,f_y,f_z)\\
+&=\left( \frac{2x}{r}(r-A), \frac{2y}{r}(r-A), 2z \right)
+\end{align*}
+$J$ has rank 1 in level set $T^2=f ^{-1} (0)$. Consider cases:
+\begin{enumerate}
+\item either $z\neq 0$ (0k)
+\item $z=0$ and $f_x^2 + f_y^2 = (r-A)^2=4(r-A)^2=4a^2 \neq 0$ 
+\end{enumerate}
+    so $f_x,f_y$ not both 0.
+\end{examples}

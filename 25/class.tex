@@ -1,0 +1,95 @@
+% April 22
+We introduce a Riemann metric on $T^n$ such that the natural projection $\pi\from \RRR^n \to T^n$
+$$\pi(x_1,\ldots, x_n) = (e^{ix_1},\ldots, e^{ix_n})$$
+is a local isometry.
+$$M \xrightarrow{f} N\quad \langle u | v \rangle _p = \langle dfu | dfv \rangle _{f(p)}$$
+For every $q\in \NN$ there exists $p\in U$ such that $f(U)= V\ni q$.\\
+We define the Riemannian metric:
+$$\langle \tilde u | \tilde v \rangle_q= \langle d\pi^{-1}(\tilde u), d\pi^{-1}(\tilde v) \rangle_{\pi^{-1}(q)}$$
+We shall prove this is well defined. Note for every $p\in \RRR^n$ and $u,v\in \tnsp_pM$
+$$\langle u| v\rangle_p = \langle \pi(u) | \pi(v) \rangle_{\pi(p)}$$
+is well defined; suppose $p,\bar p\in \RRR^n$ and
+\[ \left.\begin{array}{cc} \alpha(t), & \bar \alpha(t) \\
+\beta(t),& \bar \beta(t) \end{array}\right\}\text{Differentiable curves} \]
+such that $\pi(p) = \pi(\bar p) = q $ and 
+\begin{gather*}
+\left.\frac{d\pi \alpha(t)}{dt}\right|_{t=0}=\left.\frac{d\pi \bar \alpha(t)}{dt}\right|_{t=0} = \tilde u \\
+\left.\frac{d\pi \beta(t)}{dt}\right|_{t=0}=\left.\frac{d\pi\bar \beta(t)}{dt}\right|_{t=0}= \tilde v
+\end{gather*} 
+Next we still need to show that 
+\begin{itemize}
+\item Pulling back metric from $N$ to $M$ and check its an isometry.
+\item $\pi$ is many-to-one; locally the metric is representable in the same way.\end{itemize}
+Immersing the Flat Torus:\\
+The torus is defined by
+\begin{gather*}
+T^n = S^1\times \ldots \times S^1 \quad \RRR^{2m} = \RRR^2\times \ldots \times \RRR^2\\
+f\from T^n \to \RRR^{2n}\\
+\left( (x_1,y_1),(x_2,y_2),\ldots , (x_n,y_n)\right) \mapsto (x_1,y_1,x_2,y_2,\ldots, x_n,y_n)\\
+\langle df(u), df(v) \rangle = \langle Id(u), Id(v) \rangle\\
+= \langle u| v \rangle
+\end{gather*}
+The flat torus means lots of things. Not all isometric!
+
+Given the set 
+\begin{gather*}
+G=\{ f\from \RRR\to \RRR \ f(t) = yt+x, \ y>0 \}\\
+= \{ (x,y)\in \RRR^2 \from y>0 \}
+\end{gather*}
+$g_{11} = g_{22} = 1/y^2,\ g_{12} =0 $ is the Riemannian Metric $e=id = (0,1)$ and $\langle \cdot | \cdot \rangle_e = \langle \cdot | \cdot \rangle$\\
+First observe that:
+\begin{gather*}
+(x,y)^{-1} = \left( \frac{-x}{y}, \frac 1y \right)\\
+s=yt + x \implies \frac{s-t}{y} = t\\
+\langle U | V \rangle_g = \langle (dL_{g^{-1}})_g \dot U | (dL_{g^{-1}})_g V \rangle_e
+\end{gather*}
+We define $\gamma(s) = (x+s,y)$ and $\gamma(0) = \tilde \gamma(0)$
+$$\gamma'(0) = \frac{\partial}{\partial x} \quad \tilde \gamma'(0) = \frac{\partial}{\partial y}$$
+ \begin{align*} 
+(dL_{g^{-1}})_g \frac{\partial}{\partial x} &= \left.\frac{d}{ds} \right|_{s=0} \frac 1y (y+x+s) - \frac xy\\
+&= \left.\frac{d}{ds} \right|_{s=0}\\
+&= \left(\frac 1y, 0 \right)\\
+(dL_{g^{-1}})_g \frac{\partial}{\partial y} &= \left.\frac{d}{ds} \right|_{s=0} \frac 1y (yt+x+st) - \frac xy\\
+&= \left.\frac{d}{ds} \right|_0 \left( 0, \frac{s+1}{y} \right) \\
+&= (0,1/y)
+\end{align*} 
+On the other hand:
+\begin{gather*}
+\langle U|V \rangle g = \langle (dL_{g^{-1}})_g U | (dL_{g^{-1}})_g V \langle _e\\
+= g_n\left( (\frac 1y ,0), (\frac 1y , 0 ) \right) = \frac{1}{y^2} \\
+= g_{12} = g_{12}\left( \left(0,\frac 1y\right), \left(\frac 1y, 0\right) \right) =0
+\end{gather*} 
+Now define $z(x,y) = x+iy$ and 
+$$z \mapsto z' = \frac{az+b}{cz+d}$$
+this is isometric to the last one.
+$$v= a\frac{\partial}{\partial x} = b\frac{\partial}{\partial y}$$
+that is defined as:
+$$\langle u| v \rangle = I(v) = E a^2 + 2F(a,b) + Gb^2$$
+thus the \textbf{1$^{st}$ Fundamental Form} is:  
+$$ds^2 = Edx^2 + 2Fdx \otimes dy + Gdy^2 $$
+we have seen the that this is equal to:
+$$=\frac{dx^2 + dy^2}{y^2}$$
+and this is equal to:
+\begin{gather*}
+ds^2 = -\frac{4dz\, d\bar z}{(z- \bar z)^2} = -\frac{4d\bar z\, d\bar{\tilde{z}}}{(\tilde z- \bar{\tilde{z}})^2}\\
+d\tilde z = \frac{a(cz+d) - c(az+b)}{(cz+d)^2}\\
+= \frac{ad-bc}{(cz+d)^2}dz \\
+= \frac{dz}{(cz+d)^2}
+\end{gather*}
+Show isometries of $S^n$ are restrictions to $S^n$ of orthogonal maps of $\RRR^{n+1}$\\
+Let $f\from S^n \to S^n$ an isometry extend to $\hat f\from \RRR^{n+1} \to \RRR^{n+1}$
+$$\hat f(x) = |x| f\left( \frac{x}{|x|} \right)$$
+note that $\hat f$ preserves norms of vectors:
+$$ |\hat f(x) | = \left| |x| f\left( \frac{x}{|x|} \right)\right| =|x| \left| f\left( \frac{x}{|x|} \right)\right|= |x|$$
+also it preserves vectors, because the angle between $x,y\in \RRR^{n+1}$ is equal to the angle between $\hat x, \hat y \in S^n$ and this is equal to the distance on $S^n$.
+
+This shows $\hat f$ preserves $\langle\ | \ \rangle$ on $\RRR^{n+1}$ since we can write $\langle x| y \rangle = |x||y| \cos(\theta)$.
+
+Now, $\hat f$ must take $(e_i) $ to an orthonormal basis 
+\begin{gather*}
+\left\langle \hat f\right(\sum \alpha_i e_i\left), \hat f(e_j)\right\rangle = \left\langle \sum \alpha_i e_i , e_j \right\rangle = \alpha_j \\
+\implies \hat f\left(\sum \alpha_i e_i\right) = \sum \alpha_i \hat f(e_i)
+\end{gather*}
+So $\hat f$ is a linear orthogonal map $\hat \from \RRR^{n+1} \to \RRR^{n+1}$ preserves $|\cdot|$ and $\langle \ | \ \rangle$ such that:
+$$|x-y|^2 = |x|^2 + |y|^2 - 2\langle x| y\rangle$$
+so $\hat f$ is an isometry of $\RRR^{n+1}$. In conclusion, $\hat f|_{S^n}$ is an isometry of $S^n$

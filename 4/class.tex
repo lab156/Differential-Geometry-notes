@@ -1,0 +1,45 @@
+%latex
+\begin{ddef}[Orientation along a Path]
+$(\phi,V) + \atlas$ induces an orientation $[\phi](p)$ at each $p\in V$. The equivalence class $[\phi](p)$ is given by the relation: $\phi_1 \sim \phi_2$ iff $\phi_2 \circ \phi_1$ has positive determinant at $\phi_1(p)$.
+\end{ddef}
+
+\begin{ddef}[Conjugate of a chart]
+The conjugate $\bar \phi$ of $\phi$ is: $$\bar \phi = \begin{bmatrix} I & 0 \\ 0 & -1 \end{bmatrix}$$ 
+\end{ddef}
+
+\begin{ddef}[Paths]
+A path is a function $\gamma: [a,b] =I \to M$. For all $t\in [a,b]$, we can define an orientation called $\sigma(t)$ 
+along $\gamma(t)$ if it is \textbf{induced locally by charts}: i.e.  $\forall t\in I \ \exists \ (\phi,V)$ and an open subinterval $t\in I_0$, such that $\gamma(I_0)\subset V$ and $\sigma(t)=[\phi](\sigma(t))$    
+\end{ddef}
+
+\begin{teorema}
+If $\gamma:[a,b]\to M$ is a path; then there exists exactly 2 orientations $\pm \sigma(t)$ along $\gamma(t)$.
+\end{teorema}
+
+\begin{ddef}[Orientation Preserving Loop]
+A loop ($\gamma:[a,b]\to M, \gamma(a) = \gamma(b)$) is orientation preserving iff any orientation along $\gamma$ satisfies $\sigma(a)=\sigma(b)$
+\end{ddef}
+
+\begin{teorema}
+$M$ is orientable $\iff$ every loop in $M$ is Orientation preserving
+\end{teorema}
+
+\begin{ddef}[Smooth Maps]
+A continuous function between $f: M \to N$ ($m$ and $n$ dimensional respectively) is smooth iff For any $p\in M$ there exists $(\phi,V)$ and $(\psi,W)$, such that $f(p)\in W\subset N$ and the function: $ \Phi = \psi \circ f \circ \phi^{-1} $ is smooth.
+\end{ddef}
+
+\begin{remarks}
+\begin{itemize}
+\item If $f$ is smooth with one atlas or chart, it will be smooth with \emph{any} atlas or chart, since if $\tilde \Phi$ is another representation then it can be written as: $$\tilde \Phi = (\tilde \psi \circ \psi^{-1})\circ (\psi \circ f \circ \phi)\circ (\phi^{-1}\circ \tilde\phi)$$.
+\item Charts are smooth; for if $p\in V\cap V_1$, then clearly $\Phi = I \circ \phi \circ \phi_1^{-1}$ is smooth.
+\item There is a chain rule for manifolds.
+\end{itemize}
+\end{remarks}
+
+\begin{corol}
+$g:L\to M$ is smooth iff $h\circ g: L\to \RRR$ is smooth for every smooth $h:M\to \RRR$.
+\end{corol}
+
+\begin{ddef}[Diffeomorphims] 
+are smooth bijective functions with smooth inverses.
+\end{ddef}

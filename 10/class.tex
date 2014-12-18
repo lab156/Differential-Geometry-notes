@@ -1,0 +1,59 @@
+Homework Problem:\\
+Let $M^m$ and $N^n$ be manifolds, then $M\times N$ is also a manifold with the atlas $\{ U_\alpha \times V_\alpha, z_{\alpha,\beta} \}$ where:
+$$ z_{\alpha,\beta}(p,q) = (z_\alpha(p),y_\beta(q))$$
+Using this result prove that $(S^1)^n \cong T^n$ where $S^1$ is the circle and $T^n$ is the n-Torus.
+
+\begin{ddef}
+The n-Torus is written and denoted as: $T^n = \RRR^n/G$ where the n-fold product:
+$$G = \ZZ \times \ZZ \times \ldots \times \ZZ$$   
+with this definition and using the embedding:
+$$\lambda: (x_1,\ldots, x_n) \to (e^{2\pi i x_1},\ldots, e^{2\pi i x_n})$$
+and I think this is enough to show that both spaces are diffeomorphic.
+\end{ddef}
+
+\subsection{Cotangent Bundle}
+\begin{ddef}
+The \textbf{Cotangent Bundle} of $M^m$ is a $2m$-dimensional manifold,
+$$T^*M= \cup_{p\in M} T^*_p M = \{(p,w)\} $$
+where $w=\sum a\, dx^i$ in the local coordinates $\phi=(x_1,\ldots, x_n)$.
+\end{ddef}
+
+differentials can be a real valued linear map (1-forms are elements of the dual) \\
+The projection:
+$$\pi\from \tnsp^* M\to M \quad \pi(p,w) = p$$
+For each chart $\phi\from W\subset M \to \RRR^m$ we define:
+\begin{align*}
+\tilde \phi^*(p,w) &= (x_1(p),\ldots,x_m(p),w(\frac{\partial}{\partial x_1}) ,\ldots, w(\frac{\partial}{\partial x_m} ))\\
+                &=      (x_1(p),\ldots,x_m(p),a_1,\ldots,a_m) 
+\end{align*}
+$w=\sum a_i dx^i$ in local coordinates $\phi=(x_1,\ldots, x_m)$  each chart is 1-1 and $\tilde \phi^*$ maps $\tilde W = \pi^{-1}(W)$ map 1-1 onto an open set:
+$$\tilde \phi^*(\tilde W) = \phi(W)\times \RRR^m$$
+and this image is an open set in $\RRR^{2m}$.
+
+Now we need to define a topology on $\tnsp^* M$, we define a basis for the topology of $\tnsp^*M$:
+$$\left\{ \tilde \phi^{*-1}(U)\from U \text{ is open in } \RRR^{2m} \right\}$$
+and $\tilde \phi^*$ is the chart on $\tnsp^* M$. The $\phi^*$ on the original manifold induce the charts on the cotangent bundle.
+
+Some more comments, if $f\in C^\infty(M)$, then $df$ is a smooth section to $\tnsp^*M$.
+$df\from M \xrightarrow{smooth} \tnsp^*M$ and $\pi(df_p)=p$.
+
+In local representation $df=\sum \frac{\partial f}{\partial x_i} dx^i$, then the smoothness of $df$ corresponds to smoothness of $a_i= \frac{\partial f}{\partial x_i} $.
+
+Note that $w=\sum a_i dx_i$ is smooth when $w$ and $a_i$ are.
+
+\begin{ddef}[Quotients by discontiuous Actions]
+Let $G$ act \textbf{evenly} on $M$ (freely and properly discontinuously).
+\begin{description}
+    \item[Freely] refers to the identity being the only fixed point. 
+    \item[Properly Discontinuous] Refers to $\forall p\in M \ \exists U\subset M\from U\cap g(U) = \varnothing $ i.e. Each $p\in M$ belongs to an open set $U=U_p$ such that $g(U)\cap U=\varnothing$ unless $g=e$.
+\end{description}
+\end{ddef}
+
+Note: the sets $g(U)$, $g\in G$ are in fact mutually disjoint:
+$$P\in g_1(U)\cap g_2(U) \implies g_1^{-1} p \in U\cap g_1 ^{-1} g_2(U) \implies g_1 = g_2$$  
+
+\begin{ddef}[Orbit Space]
+$$M/G = \{[p] = Gp\from p\in M \}$$
+with the projection $\pi \from M\to M/G$ where $\pi(p) = [p]$. Gice $M/G $ the quotient topology, which is: $V$ is opoen iff $\pi ^{-1} (V) \subset M$ is open.\\
+$\pi$ is not only continuous, but open ($\pi$ is not 1-1). if $W\subset M$ is open, then $\pi ^{-1} (\pi(W)) = \cup_g gW$ is open $\implies \pi$ is open.
+\end{ddef}

@@ -1,0 +1,58 @@
+% 25 de marzo
+\subsection{DoCarmo Problem 0.9}
+\begin{enumerate}[a)]
+\item This is the direction $\Leftarrow$ assuming there is an orientation of $M$preserved by all the diffeomorphisms of $G$. So we have to show that $M/G$ is orientable.//
+$f\from M\to N$ is a such a diffeomorphim and $\{(\phi_\alpha, u_\alpha)\}_{\alpha\in I}$ in $M$ and $(\{\phi_\beta, V_\beta) \} \text{ on } N \}$. $f$ induces an orientation on $N$: 
+\begin{gather*}
+\left\{(f_\alpha = \phi_\alpha \circ f^{-1}, f(u_\alpha)) \right\}\\
+f_\alpha\circ f_\beta^{-1} = \phi_\alpha\circ \phi_\beta^{-1}
+\end{gather*}
+What sies it mean for $f$ to preserce the orientations of $N$?//
+$f$ is Orientatio Preserving if the charts $f_\alpha=\phi_\alpha \circ f^{-1}$ represent the orientation $N$.//
+$\{(\psi,V)\}$ preexisting oriented atlas on $N$. 
+\begin{gather*}
+\det J(\psi \circ D_\alpha^{-1}) \\
+\det J(\psi \circ f \circ \phi_\alpha^{-1}) > 0
+\end{gather*}
+Suppise now the $M/G$ has an orientable atlas $\{(u_\alpha,\psi_\alpha)\}_{\alpha\in I}$ and $\pi\circ \pi^{-1}=Id$.
+
+Suppose $\{(U_\alpha,\psi_\alpha)\}_{\alpha\in I}$ is an oriented atlas on $M$ and the quotient atlas $\{(V_\alpha,\phi\alpha\circ \pi^{-1})\}_{\alpha\in I}$ on $M/G$ is orientble.
+
+Transition maps on $M/G$ have the form:
+$$\phi_\alpha\circ \pi^{-1} \circ \pi \circ \phi_\beta^{-1}$$
+and by choosing $\pi^{-1}$ properly we can make this $\phi_\alpha\circ g\circ \phi^{-1} $for any $g\in G$.
+
+\item Use a) to show that the Mobius band and the Klein bottle are not orientable. Let $M=C/G$ and $\RRR^3 \supset C= \{(x,y,z) \in \RRR^3 | x^2 + y^2 = 1 \}$ if $G=\{I,A\}$ and $A$ is the antipodal map or $A(p)=-p$. Let the atlas be:
+$$\atlas = \{(\phi,V),(\tilde \phi, \tilde V)\}$$
+and the inverse map 
+\begin{gather*}
+\phi(x,y,z) = (\frac{x}{1-y},z)\quad V=\{(x,y,z)\in C | y\neq 1\}\\ 
+\tilde \phi(x,y,z) = (\frac{x}{1-y},z)\quad \tilde V=\{(x,y,z)\in C | y\neq 1\}\\
+\phi^{-1} (u,v) = \left( \frac{2u}{1+u^2} , \frac{-1+u^2}{1+u^2} ,v \right) \\
+\tilde \phi^{-1} (u,v) = \left( \frac{-2u}{1+u^2} , \frac{1-u^2}{1+u^2} ,v \right) \\
+\end{gather*}
+\item Use (a) to show that $\RRR P$ is orientable iff $n$ is odd. $$\RRR^{n+1} \supset S^n = \{(u,v)=(u_1,\ldots,u_n,v) | u^2 + v^2 =1 \} $$
+$\RRR P^n= S^n/G$ 
+\begin{gather*}
+\phi(u,v) = \frac{u}{1-v} \quad \hat \phi(u,v) = \frac{\bar u}{1+v} = \frac{(u_1,\ldots, u_n,-u_n)}{1+v} \\
+A(u,v) = (-u,-v) \quad v=S^n-\{NP \}\\
+\phi^{-1}(x) = \left( \frac{2x}{1+x^2}, \frac{-1+x^2}{1+x^2} \right)\quad \phi^{-1}(x) = \left( \frac{2x}{1+x^2}, \frac{1-x^2}{1+x^2} \right)
+\end{gather*}
+Now for $X=(x_1,\ldots, x_n) \in \RRR^n$ we have:
+\begin{align*}
+\phi A \tilde \phi^{-1} (x) &= \phi A \left( \frac{2x}{1+x^2}, \frac{1-x^2}{1+x^2} \right)\\
+&= \phi \left( \frac{ -2x}{1+x^2}, \frac{-1+x^2}{1+x^2} \right)\\
+&= \frac{\frac{-2x}{1+x^2}}{1- \frac{-1+x^2}{1+x^2}} = \frac{-2x}{1+x^2 + 1-x^2} = -\bar x
+\end{align*}
+Finnaly this means:
+$$|J| = \left| \begin{matrix} -I_{n-1} & 0 \\ 0 & 1 \end{matrix} \right| = |-1|^{n-1} $$
+Another way is to look the torus $T^2 \subset \RRR^3$ and with equation:
+$$z^2 + (\sqrt{x^2 + y^2} - a)^2 = r^2$$
+using angles to parametrize $p(\theta,\phi)= (x,y,z)$ and 
+\begin{gather*}
+x=(a+r\cos(\phi) \cos(\theta) \\
+y=(a+r\cos(\phi) \sin(\theta) \\
+z=r\sin(\phi)
+\end{gather*}
+and the inverses are $\theta = \tan^{-1}(y/x) \ \phi=\sin^{-1}(z/r)$. A point onthe outside equator. $p_0 = (a+r,0,0)$.
+\end{enumerate}

@@ -1,0 +1,28 @@
+\begin{ddef}[Smooth Manifold]
+$M$ is a topological space covered by an atlas $\atlas=\{(\phi_i, V_i)\}$ of smoothly related charts
+\begin{enumerate}[a)]
+\item  The sets $V_i\subset M$ are open connected and $M=\cup V_i$.
+\item $\forall i$ (not necessarily countable) $\phi_i:V_i\to \RRR^m$
+\item If $V_i\cap V_j \neq \varnothing$ then $\phi_{ij} = \phi_j(\phi_i^{-1})$ is a smooth map.   
+\end{enumerate}
+\end{ddef}
+
+\begin{remarks}
+\begin{enumerate}
+\item Smooth means $C^\infty$ or $C^\omega$. We could require $\phi_{ij}$ to be analytic.
+\item Topological space usually means metrizable. Haussdorff+2nd countable = Hauss + Paracompact = metrizable.
+\item An atlas determines a smooth structure on $M$. There is an equivalence class of atlases i.e. $\atlas_1$ and $\atlas_2$ are equivalent iff $\atlas_1\cup \atlas_2$ is an atlas.???
+\item An inverse chart $x=\phi^{-1}:U\subset \RRR^m \to V\subset M^m$ is a local parametrization.
+\end{enumerate}
+\end{remarks}
+
+\begin{ddef}[Orientability]
+A smooth manifold $M$ is orientable if it has an equivalent atlas $\tilde{\atlas}=\{(\tilde{\phi}_i, \tilde{V}_i)\}$ such that: 
+    $$\tilde{\phi}_{ij}(x_1,\ldots,x_m)= (y_1\ldots y_m)$$
+    Satisfies
+    $$\frac{\partial(y_1\ldots y_m)}{\partial(x_1,\ldots,x_m)}>0$$
+\end{ddef}
+
+\begin{examples}
+$GL_n(\RRR) = \{n\times n \text{ Real non-singular matrices}\}$ is a smooth manifold
+\end{examples}

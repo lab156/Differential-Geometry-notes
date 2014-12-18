@@ -1,0 +1,64 @@
+% 13 Febrero
+Continuing on differentials...\\
+\begin{gather*}
+f: M\to N \xrightarrow{g} \RRR\\
+df_p: \tnsp_pM \to \tnsp_{f(p)}N
+\end{gather*}
+And it is defined by $df(v)(g)=v(g\circ f)$.\\
+A special case is when $N=\RRR$ then $f: M \to \RRR$ in this case: 
+$$df_p(v)= \lambda \frac{d}{dr}\bigg|_{f(p)}$$
+to find $\lambda$, take $g(r)=r$ then on one hand $v(g\circ f) = v(f)$ and on the other hand: $\lambda \frac{dr}{dr}= \lambda$ so $\lambda= v(f)$.  The result that comes out is $df(v)=v(f)$ the slogan of this is: ``$df$ eats $v$, but $v$ turns around and eats $f$''. Note that we can think of $g$ as a test function.\\
+We can regard $df_p$ as an element of the dual space of $\tnsp_pM$ and is denoted as $\tnsp_p^*M$ which is the cotangent space to $M$ at $p$. 
+
+\subsection{Local Representation}
+\begin{gather*}
+x_j=r_j\circ \phi : V\subset M \to \RRR\\
+dx_j\left(\frac{\partial}{\partial x_j} \right) = \frac{\partial x_j}{\partial x_i}  = \delta_{ij}
+\end{gather*}
+Thus, $\{dx_j \}$ dual basis to $\{\frac{\partial}{\partial x_j} \}$.\\
+Write $dx^j=dx_j$ to switch the place of the indices so the sums looks good. Then for $f: M\to \RRR$  so $df=\sum \frac{\partial f}{\partial x_j} dx^i$.\\
+ Comparing $\{dx_j\}$ to $\{\frac{\partial}{\partial x_j} \}$ there is a superioty to differential 1-forms vrs. vectors.
+\begin{teorema}
+In charts $\phi$ and $\tilde \phi$ about $p\in M$ an  element. Let $\omega\in \tnsp_p^* M$ has local representation:
+\begin{equation} \label{eq:1}
+ \omega= \sum_{i=1}^n a_i dx^i = \sum_{i=1}^n \tilde a_i d\tilde x_i 
+\end{equation}
+where $d\tilde x^i = \sum_i \frac{\partial \tilde x_j}{\partial x_i} dx^i$ and $\tilde a_j = \sum_i a_i \frac{\partial x^i}{\partial \tilde x_j} $.
+\begin{proof}
+1) Just take $d$ of $\tilde x^j$; 2) apply [EQ\ref{eq:1}] to $\frac{\partial}{\partial \tilde x_j} $.
+\end{proof}
+\end{teorema}
+Now we allow verctors to vary smoothly:
+\begin{ddef}
+A \textbf{vector field } $V$ on $M$ is a section of $\tnsp M$, that is, a map $V:M\to \tnsp M$ such that $\pi(v_p)=p$.\\
+A vector field is \textbf{smooth} if this this map is smooth
+\end{ddef}
+
+\begin{teorema}
+Let $v:M\to \tnsp M$ be a vector field, then the following are equivalent:
+\begin{enumerate}[1)]
+\item $v:M\to \tnsp M$ is smooth.
+\item $v= \sum v^i \frac{\partial}{\partial x_i} $ where $v^i: U\to \RRR^n$ are smooth functions.
+\item $\forall U\subset M$ (open sets) snd $g\in C^\infty (U),\ v(g)$ is a smooth function.  
+\end{enumerate}
+\begin{proof}
+This result should be easy to prove...
+\end{proof}
+\end{teorema}
+
+$V\in C^\infty(M,\tnsp M),\ g\in C^\infty(M)$ This gives a new smooth function $v(g)\in C^\infty(M)$ 
+
+\begin{ddef}
+$M$ is \textbf{parallelizable} if $\tnsp M$ is trivial. Trivial means that $\tnsp M \cong M\times \RRR^m$. 
+\end{ddef} 
+In some situations $\tnsp M$ there is local triviality. In particular, If the manifold is parallelizable; there exists a smooth non-vanishing vector field on $M$.\\
+\begin{examples}
+\begin{itemize}
+\item $n$-torus is parallelizable.
+\item $S^{2n-1} $ is parallelizable and $S^{2n}$ is not.
+\end{itemize}
+\end{examples}
+
+\begin{teorema}
+There is no smooth non-vanishing vector field on $S^2$. ``You can't comb the sphere''.
+\end{teorema}

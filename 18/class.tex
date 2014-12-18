@@ -1,0 +1,98 @@
+% 27 de marzo
+We continue working on the Lie Bracket defined as:
+$$[X,Y](f) = X(Yf) - Y(Xf)$$
+this is a linear derivation on $f\in C^\infty (M)$ \\
+Let $z=[X,Y]$ is a vector field and $z\in X^\infty (M)$ :
+$$g\from M\to N \quad [ \frac{\partial}{\partial x_i} , \frac{\partial}{\partial x_j} ]=0$$
+
+\begin{teorema}
+If $\phi=(x_1,\ldots, x_n)$ is a chart on $U\subset M$ and $V=\sum_{i=1}^n v^i \frac{\partial}{\partial x_i},\ W = \sum_{i=1}^n w^i \frac{\partial}{\partial x_i} $
+then 
+\begin{align*}
+ [V,W] &= \sum_j \left( V(w^j) - W(v^j) \right) \frac{\partial}{\partial x_j}  \\
+       &= \sum_j \left( v^i(\frac{\partial w^j}{\partial x_i} ) - w^i \frac{\partial v^j }{\partial x_i} \right) \frac{\partial}{\partial x_j}  
+\end{align*}
+
+\begin{proof}
+$[V,W] = \sum_j b^j \frac{\partial}{\partial x_i}$ for some $b^j$. In fact, 
+$$ b^k = [V,W] x_k = V(W( x_k)) - W(V(x_k))$$
+\end{proof}
+\end{teorema}
+
+\begin{teorema}
+    For $f,g \in C^\infty (M)$, $X,Y\in X^\infty (M)$
+    $$ [fX, gY] = fg[X,Y] + fX(g) Y - gY(f) X$$
+\end{teorema}
+
+\begin{examples}
+    Let $X= \frac{\partial}{\partial x}, \ Y= \frac{\partial}{\partial y}  $ define a smooth vector field in $\RRR^2$, then $[X,Y]= [\frac{\partial}{\partial x}, x\frac{\partial}{\partial y}  ]=\frac{\partial}{\partial y} $. Thus, $X$ and $Y$ cannot be vector fields on the right hand semiplane: $\{(x,y)\from x>0 \}$ the intuition here being that the vectors donnot commute in the directions.
+\end{examples}
+
+\subsection{Integral Curves and Flows of Vector Fields}
+\begin{ddef}
+    A smooth curve $\alpha\from (a,b) \to M $ is a trajectory or integral curve of a vector field $V\in X^\infty (M)$ if it satisfies $\alpha ' (t) = V(\alpha(t))$. 
+    In local coordinated $\phi=(x_1,\ldots, x_n),\ \alpha_i(t) = x_i(\alpha(t))$; here necesarily $V=\sum v^i\frac{\partial}{\partial x_i}$. The precise equation is:
+    \begin{gather*} 
+    \sum_{i=1}^n \dot \alpha_i \left. \frac{\partial}{\partial x_i} \right|_{\alpha(t)} = \sum_i v^i \left. \frac{\partial}{\partial x_i} \right|_{\alpha(t)}\\
+    \dot \alpha_i(t) = v^i(\alpha(t))\\
+    \dot \alpha_i(t) = v^i\circ \phi^{-1}(\phi(\alpha(t)))\\
+    \dot \alpha_i(t) = v^i\circ \phi^{-1}(\alpha_1(t), \ldots , \alpha_n(t)) \quad i=1,\ldots, n
+\end{gather*}
+\end{ddef}
+
+So far we have an ODE system of the functions $\alpha_i(t)$ with ``coefficient functions'' $v^i\circ \phi^{-1} $ that are obviously smooth. We can apply the standard methods to solve a system of ODEs in euclidean space.
+
+\begin{teorema}
+    Let $V\in X^\infty (M), \ p\in M$, then there exists a neighborhood $U\subset M $ of $p$ and $\epsilon > 0$ and a smooth function:
+    $$\Phi = \Phi(f,q) \from (-\epsilon, \epsilon)\times V\to M$$
+    such that, for each $q\in U$ $\alpha(t) = \Phi(q)$ is the unique integral $0\in V$ defined on $(\epsilon,\epsilon)$ with initial conditions $\alpha(0) = 0$.
+\end{teorema}
+    Also write: \\
+    $\phi_t(a) = \phi(t,q)$ and call $\phi_t$ the \textbf{local flow} of $V$ near $p$.\\
+    For small $q\in U\ t,u\ \alpha(t) = \phi(t+u,q)$ and $\beta(t) = \phi(t,\Phi(u,0))$ are both trajectories if $V$ stating at $\alpha(0) = \Phi(n,q) = \beta(0)$\\
+    so $\alpha(t) = \beta(t)$ for all small enough $t$:
+    $$ \Phi_{t+u} (q) = \Phi_t(\Phi_u(q))$$
+    or equivalently $\Phi_{t+u} = \Phi_t \circ \Phi_u$. 
+    
+    \begin{remarks}
+        \begin{itemize}
+            \item Thus setting $u=-t$, 
+    $$q= \Phi_0(q) = \Phi_{t-t} (q) = \Phi_t(\Phi_{-t}(q) ) $$
+    this implies $\Phi_{-t} = \Phi_t^{-1}$. Note that this implies that for fixed small $t$, $\Phi_t \from U \to M$, is a diffeomorphism. Further, the local flow $\Phi_t,\ t\in (-\epsilon,\epsilon)$ is (formally) a 1--parameter group of diffeomorphisms.
+\item In general one cannot take $\epsilon = \infty$ (even for small $U$). Nor can one take the neighborhood $U=M$ (even for small $\epsilon$). To see this consider $V=r^2 \frac{\partial}{\partial r} $ on $\RRR$. The equation 
+    $$\alpha(t) = \frac{\alpha(0)}{1- t \alpha(0)}$$
+    which blows up at $t= 1/\alpha(0)$. 
+\item But if $M$ is compact, then $V$ is complete, i.e. $\Phi_t$ is defined $\Phi_t\from M\to M$ for all time. \\
+    $\Phi_t$ may be ragerded as a curve in $Diff^\infty (M)$ and:
+    $$V(q) = \frac{\partial}{\partial t}  \Phi_t(q) |_{t=0}$$
+    i.e., $V\in \tnsp_{Id} Diff^\infty (M)$.
+    \end{itemize}
+\end{remarks}
+
+    \subsection{The Lie Derivative}
+    In general it can be thought of an operator $Lx$ differentiates tensor fields w.r.t flow of a vector field $X\in X^\infty(M)$.
+
+    In the case of scalar fields $f\in C^\infty(M)\quad L_xf$ is just the usual directional derivative.\\
+    Let $\alpha(t) = \Phi_t(p)$ be the integral of the curve:
+    \begin{gather}
+    (L_xf)_p = Xf(p) = \frac{d}{dt}f(\alpha(t))|_{t=0}\\
+    = \lim_{t\to 0} \frac{1}{t} \left[ f(\alpha(t)) - f(p) \right] \label{numero1}
+\end{gather}
+
+\begin{ddef}
+    In general, if $g\from N\to M$ is a smooth map; the \textbf{pullback} of $f\in C^\infty(M)$ by $g$ is $g^*f=f\circ g\in C^\infty(N)$ 
+\end{ddef}
+
+So $f(\alpha(t))$ in  $L_xf$ is the pullback. $\Phi_t^* f = f\circ \Phi_t$ evaluated at $p$.
+
+\begin{displaymath}
+\xymatrix{% 
+    N \ar[rr]^-{g}\ar[rd]_{f\circ g} && M  \ar[ld]^f \\
+   & \RRR  & }
+\end{displaymath}
+
+So the limit (\ref{numero1}) can now be written as:
+$$\lim_{t\to 0} \frac{1}{t} \left[ \Phi_t^*f - f\right]_p$$
+If $\omega= \sum a_i dx^i$ is a smooth 1-form, smooth section f $\tnsp^*M$ the pullback of $\omega$ by $g\from N\to M$ is $(g^*\omega )V_p = \omega_{g(p)} (dg(V_p))$.\\
+Specializing the motion of pullbacks to $M=N, g=\Phi_t$:
+$$(L_x\omega )_p = \lim_{t\to 0} \frac{1}{t} \left[ (\Phi^*_t \omega)_p - \omega_p \right]$$

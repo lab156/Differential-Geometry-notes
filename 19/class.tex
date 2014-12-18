@@ -1,0 +1,91 @@
+% 1 de abril
+Lie Derivatives were defined by
+\begin{enumerate}
+\item $\displaystyle L_xf = X(f) = \lim_{t\to 0} \left[ \frac{\Phi_t^* f-f}{t} \right]_p \quad (\text{in } \RRR)$
+\item $\displaystyle (L_x\omega)_p =  \lim_{t\to 0} \left[ \frac{\Phi_t^* \omega-\omega}{t} \right]_p $ (in $\tnsp^*_p M$)
+\item $\displaystyle (L_xY)_p = \lim_{t\to 0} \left[ \frac{\Phi_t^* (Y_{\Phi(p)})-Y_p}{t} \right]_p $in $\tnsp_pM$
+\end{enumerate}
+
+\begin{ddef}[Leibnitz Rule]
+The Leibnitz rule is:
+$$L_X[\omega(Y)] = (L_x\omega) Y + \omega(L_xY)$$
+\end{ddef}
+
+
+\begin{lema}
+Let $\Phi \from (-\epsilon, \epsilon) \times U \to M$ be a the local flow of $X\in X^\infty(M)$ near $p\in M$. Given $f\in C^\infty(M)$, let:
+$$\eta: (-\epsilon,\epsilon)\times U \to \RRR$$
+defined by:
+$$\eta_t(q) = \eta(t,q) = \int_0^1 [D_1(f\circ \Phi)] (-st,q) ds$$
+Then $f\circ \Phi_{-t} = f-tq$ and $\eta_a= Xf$.
+\begin{proof}
+    \begin{enumerate}
+        \item $t\eta_t(q) = \int_0^1 t[D_t(f\circ \Phi)(-st,q) ds$
+                $$= \int_0^1 -\frac{\partial }{\partial s} (f\circ \Phi (-st,q))ds$$
+            \item $\displaystyle Xf(a) = \frac{d}{dt} f\circ \phi_t(a) |_{t=0} = -\frac{d}{dt} f\circ \Phi_{-t} (a) |_{t=0}$
+                $$\frac{d}{dt}\left( t\eta_t(a) - f(a)\right) |_{t=0}$$
+        \end{enumerate}
+        \underline{Proof of the Proposition}
+        For $f\in C^\infty (M)$ we have:
+        \begin{gather*}
+            d\Phi_{-t} (Y_{\phi_t(p)}) = Y(f\circ \Phi_{-t}) \circ \Phi_t(p)\\
+            = (Yf - tY\eta_t)\circ \Phi_t(p)
+        \end{gather*}
+        So 
+    \begin{gather*}
+    (L_XY)_p f = \lim_{t\to 0} \frac{d\Phi_{-t} (Y_{\Phi_t(p)}f - Y_p f)}{t}\\
+    = \lim_{t\to 0} \left[ \frac{(Yf) \circ \Phi_t(p) - (Yf)_p}{t} - (Y\eta_t)\circ \Phi_t(p) \right]\\
+    = X_p(Yf) - Y_p(Xf) = [X,Y]_p f
+\end{gather*}
+\end{proof}
+\end{lema}
+ 
+\begin{teorema}
+$$L_XY = [X,Y]$$
+\end{teorema}
+
+\begin{teorema} 
+    Let $X,Y \in X^\infty (M)$ induce that local flows $\Phi_t,\Psi_s$. Then $X,Y$ commute near $p$ iff $\Phi_t$ and $\Psi_s$ also do.\\
+    i.e. 
+    \begin{gather}
+        [X,Y] = 0 \text{ near } p \label{equ:1}\\
+        \iff \Phi_t\circ \Psi_s = \Psi_s \circ \Phi_t  \text{ near } p \text{ for small } s,t \label{equ:2}
+    \end{gather}
+    \begin{proof}
+        $\ref{equ:2} \implies \ref{equ:1}$\\
+        For $q$ near $p$ \ref{equ:2} implies:
+        \begin{gather*}
+        \frac{\partial}{\partial s} \Phi_t\circ \Psi_s(q) | _{s=0} = \frac{\partial }{\partial s} \Psi_s \circ \Phi_t(q) |_{s=0}\\
+        d\Phi_t(Y_q) = Y_{\Phi_t(q)} \implies Y_q = d\Phi_{-t} (Y_{\Phi_t(q)}) \implies (L_x Y)_q \\
+        = \lim_{t\to 0} \frac{Y_q - Y_q}{t} =0
+    \end{gather*}
+    $\ref{equ:1} \implies \ref{equ:2}$ this direction is harder.\\
+    For $q$ near $p$, let $\gamma(t)$ be the curve in $\tnsp_qM$ then $\gamma(t) = d\Phi_{-t} (Y_{\Phi_t(q)})$, for small $t$. Then 
+    \begin{gather*}
+    \gamma'(t) = \lim_{h \to 0} \left[ \frac{\gamma(t+h) - \gamma(t) }{h} \right]\\
+    = \lim_{h \to 0}\frac{1}{h} \left[ d\Phi_{-t-h} (Y_{\Phi_{t+h}(q)}) -  d\Phi_{-t} (Y_{\Phi(q)})\right]\\
+    d\Phi_{-t} \left(\lim_{h\to 0}\frac{1}{h} \left[  d\Phi_{-h}(Y_{\Phi_h(\Phi_t(q))}) -  Y_{\Phi(q)}\right] \right)\\
+\end{gather*}
+This is just the Lie derivative
+$$ d\Phi_{-t} \left((L_x Y)_{\Phi_t(q)}\right) = d\Phi_{-t}\left([X,Y]_{\Phi_t(q)}\right) =0$$
+and we know that $[X,Y]=0$. So, $\gamma'(t) \equiv 0$ and $\gamma(t) = \gamma(0) = Y_q$. This is only a point it doesn't go anywhere; i.e. 
+$$d\Phi_{-t} \left(Y_{\Phi_t(\delta(s))}\right) = Y_{\delta(s)}$$
+    for any curve $\delta(s)$ and $q$ near $p$.\\
+    In particular, consider the curve $\gamma(s) \subset M$:
+    $$\delta(s) = \Phi_{-t} \circ \Phi_s \circ \Phi_t(q) $$
+    Then $\delta(0) = q$, and 
+    \begin{gather*}
+    \delta'(s) = \frac{d}{dh}\delta(s+h) |_{h=0} =  \frac{d}{dh}\Phi_t \circ \Psi_{h+s} \circ \Phi_t (q) |_{h=0}\\
+    =  \frac{d}{dh} \Phi_{-t} \circ \Psi_h \circ \Phi_t \circ \left( \Phi_{-t} \circ \Psi_s \circ \Phi_t(q)\right)|_{h=0}\\
+=  \frac{d}{dh} \Phi_{-t} \circ \Psi_h \circ \Phi_t (\delta(s))|_{h=0}   =  \frac{d}{dh} \Phi_{-t}\left( \Psi_h\left( \Phi_t \left(\delta(s) \right)\right)\right)\\
+= d\Phi_{-t} (Y_{\Phi_t(\delta(s))}) = Y_{\delta(s)} = \delta'(s)
+\end{gather*}
+$\implies \delta(s)$  is the integral curve of $Y$ through $q$.
+    \end{proof}
+\end{teorema}
+
+\begin{teorema}
+    Let $X\in X^\infty(M)$ and $X_p\neq 0 $, for some $p\in M$ then there exists a chart 
+    $$\phi=(x_1,x_2,\ldots,x_n)\from U\to \RRR^n$$
+    $p\in U$, such that $X$ is $\phi-$related to $\frac{\partial}{\partial r_1}$ i.e. $X=\frac{\partial}{\partial X_1}$
+\end{teorema}
