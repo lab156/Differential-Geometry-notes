@@ -28,7 +28,13 @@ function new_dir {
     }
 
 if [ "$1" == "" ] ; then
-    new_name=$(( 1 + `last_lecture` ))
+    ll=`last_lecture`
+    if [[ $ll == "" ]]; then
+        #NO RESULTS; CREATE FIRST DIR
+        new_name=1;
+    else
+        new_name=$(( 1 + $ll ));
+    fi
     echo Creating new dir $new_name
    new_dir $new_name 
     exit 0

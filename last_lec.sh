@@ -9,4 +9,9 @@ for fil in `ls`; do
 done | sort -n | tail -1
 }
 
-last_lecture
+ll=`last_lecture`
+if [[ $ll == "" ]]; then
+    echo 0;
+else
+    echo $ll;
+fi
