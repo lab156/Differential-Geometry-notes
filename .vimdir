@@ -1,2 +1,3 @@
 "PARA GUARDAR Y CORRER PDFLATEX RAPIDO 
+"TO SAVE AND RUN PDFLATEX QUICKLY
 map <Leader>a :w <bar> !pdflatex this_class.tex<CR>

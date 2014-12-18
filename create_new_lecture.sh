@@ -6,7 +6,7 @@
 #   To create the file of class 4 quickly:
 #    $ ./create_new_clase.sh 4
 
-#THIS FUNCTION RETURNS THE NAME OF THE FILE WITH THE LARGEST NUMERIC VALUE
+#RETURNS THE NAME OF THE FILE WITH THE LARGEST NUMERIC VALUE
 function last_lecture {
 regu="^[0-9]+$"
 for fil in `ls`; do 
