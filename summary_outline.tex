@@ -1,0 +1,265 @@
+\documentclass{beamer}
+\usepackage{summary}
+\begin{document}
+\begin{frame}
+\begin{ddef}[Smooth Manifold]
+$M$ is a topological space covered by an atlas $\atlas=\{(\phi_i, V_i)\}$ of smoothly related charts
+\begin{enumerate}[a)]
+\item  The sets $V_i\subset M$ are open connected and $M=\cup V_i$.
+\item $\forall i$ (not necessarily countable) $\phi_i:V_i\to \RRR^m$
+\item If $V_i\cap V_j \neq \varnothing$ then $\phi_{ij} = \phi_j(\phi_i^{-1})$ is a smooth map.   
+\end{enumerate}
+\end{ddef}
+\begin{ddef}[Orientability]
+A smooth manifold $M$ is orientable if it has an equivalent atlas $\tilde{\atlas}=\{(\tilde{\phi}_i, \tilde{V}_i)\}$ such that: 
+    $$\tilde{\phi}_{ij}(x_1,\ldots,x_m)= (y_1\ldots y_m)$$
+    Satisfies
+    $$\frac{\partial(y_1\ldots y_m)}{\partial(x_1,\ldots,x_m)}>0$$
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[$S^n$]
+$S^n\subset \RRR^{n+1} =\{ (u_1\ldots u_n,\, v): \ u_1^2 +\ldots + u_n^2 + v^2 =1\}$
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[The Real Projective Space]
+If we take the equivalence relation $u \sim v$ iif $u=\lambda v$. Then the Projective space $\RRR P^n$ on the field $\RRR$ is $\RRR P^n = \{ [u]:\ u\in \RRR^{n+1}\}$.
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[Orientation along a Path]
+$(\phi,V) + \atlas$ induces an orientation $[\phi](p)$ at each $p\in V$. The equivalence class $[\phi](p)$ is given by the relation: $\phi_1 \sim \phi_2$ iff $\phi_2 \circ \phi_1$ has positive determinant at $\phi_1(p)$.
+\end{ddef}
+\begin{ddef}[Conjugate of a chart]
+The conjugate $\bar \phi$ of $\phi$ is: $$\bar \phi = \begin{bmatrix} I & 0 \\ 0 & -1 \end{bmatrix}$$ 
+\end{ddef}
+\begin{ddef}[Paths]
+A path is a function $\gamma: [a,b] =I \to M$. For all $t\in [a,b]$, we can define an orientation called $\sigma(t)$ 
+along $\gamma(t)$ if it is \textbf{induced locally by charts}: i.e.  $\forall t\in I \ \exists \ (\phi,V)$ and an open subinterval $t\in I_0$, such that $\gamma(I_0)\subset V$ and $\sigma(t)=[\phi](\sigma(t))$    
+\end{ddef}
+\begin{ddef}[Orientation Preserving Loop]
+A loop ($\gamma:[a,b]\to M, \gamma(a) = \gamma(b)$) is orientation preserving iff any orientation along $\gamma$ satisfies $\sigma(a)=\sigma(b)$
+\end{ddef}
+\begin{ddef}[Smooth Maps]
+A continuous function between $f: M \to N$ ($m$ and $n$ dimensional respectively) is smooth iff For any $p\in M$ there exists $(\phi,V)$ and $(\psi,W)$, such that $f(p)\in W\subset N$ and the function: $ \Phi = \psi \circ f \circ \phi^{-1} $ is smooth.
+\end{ddef}
+\begin{ddef}[Diffeomorphims] 
+are smooth bijective functions with smooth inverses.
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[Lie Groups]
+is a group $G$ which is also a smooth manifold such that the group operation and the inverse are smooth, $\mu: G\times G \to G \ g,h\mapsto g\cdot h$ and $\i: G\to G\ g\mapsto g^{-1}$\\
+A \textbf{Homomorphism} between Lie groups is a homomorphism $h:G\to H$ that is also a smooth map
+\end{ddef}
+\begin{ddef}[Lie Groups Homomorphisms]
+A \textbf{Homomorphism} between Lie groups is a homomorphism $h:G\to H$ that is also a smooth map
+\end{ddef}
+\begin{ddef}[Smooth action of a Lie Group on a Manifold]
+is a smooth map $\lambda: G\times M \to M$ and $g,m \mapsto g\bullet m = \lambda_g m $ which satisfies:
+    \begin{itemize}
+    \item $\lambda_e=Id_M$ (the identity map $e\bullet m=m$).
+    \item $\lambda(gh,m) = \lambda(g, \lambda(h,m))= (gh)m = g\cdot (h\bullet m)$
+    \item $\forall g\in G \ \lambda_g: M\to M\ m\mapsto gm$ is a diffeomorphism of $M$ onto $M$.
+    \end{itemize}
+\end{ddef}
+\begin{ddef}[Tangent Vectors as Linear Derivations]
+Let $v=v_{x^0}=(v^1,\ldots , v^n)$ be a vector at $x^0\in \RRR^n$. And let $f(x)=f(x_1\ldots x_n)$ be smooth at $x^0$. \underline{Then} $v$ operates on $f$ via: $$v(f)=v\cdot \nabla f(x^0) = \sum_{j=1}^n v_j \partial_j f(x^0)$$
+In particular note that $v(x_k)= \sum v_j\partial_j x_k = v_k$. 
+\end{ddef} 
+\begin{ddef}[Linear Derivation]
+$v=v_{x^0}$ is a linear derivation iff for all $f,g\in C^\infty (x^0)$ and $a,b\in\RRR$.
+\begin{itemize}
+\item $v(\alpha f + \beta g) = \alpha v(f) + \beta v(g)$
+\item $v(f\, g) = f(x^0)v(g) + g(x^0)v(f)$
+\end{itemize}
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[Tangent Vector]
+A tangent vector at $p\in M$ is a \textbf{linear derivation} on $C^\infty(p)$ \\
+The \textbf{Tangent Space} $\tnsp_p M$ (also written as $M_p$) is the space of all linear derivations at $p$ with vector space operations: $$ (av+bw)(f) = a\, v(f) + b\, w(f)$$
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[Differentials]
+Let $p=\gamma(0)$ and $f(p)=f(\gamma(0))$ then the differential is defined as:
+$$df_p(\dot\gamma(0))=(f\circ\gamma)'(0)$$
+switch back to $f$.\\
+If $f:M\to N$ is smooth at $p\in M$. The differential of $f$ at $p$ is the linear map $df_p:\tnsp_pM\to \tnsp_{f(p)}N$ given by:
+$$df_p(v)(g)=v(g\circ f)=w(g)$$
+for all $v\in \tnsp_pM\ g\in C^\infty(f(p))$. This is also called the \emph{push--forward} and is written as $w=f_*v$ 
+\end{ddef}
+\begin{ddef}[The Tangent Bundle of $M^m$]
+$$\tnsp M = \cup_{p\in M} \tnsp_pM$$
+Is a $2m$--dimensional manifold.\\
+We use the projections mapings $\pi: \tnsp M\to M$ i.e. $v_p \mapsto p$ 
+\end{ddef}      
+\end{frame}
+\begin{frame}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+A \textbf{vector field } $V$ on $M$ is a section of $\tnsp M$, that is, a map $V:M\to \tnsp M$ such that $\pi(v_p)=p$.\\
+A vector field is \textbf{smooth} if this this map is smooth
+\end{ddef}
+\begin{ddef}
+$M$ is \textbf{parallelizable} if $\tnsp M$ is trivial. Trivial means that $\tnsp M \cong M\times \RRR^m$. 
+\end{ddef} 
+\end{frame}
+\begin{frame}
+\begin{ddef}
+The \textbf{quotient topology} that the open map $\pi\from M\to M/G$ produces if:
+\begin{enumerate}[1)]
+\item $\pi$ is open.
+\item $\pi$ is locally 1-1.
+\item Therefore $\pi$ is locally a homeomorphism.
+\end{enumerate}
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+A smooth map $f\from M^m \to N^n$ is
+\begin{enumerate}[a)]
+\item An inmersion if $df_p\from \tnsp_p M \to \tnsp_{f(p)} N$ is non-singular at each $p\in M$.
+\item A submersion if  $df_p\from \tnsp_p M \to \tnsp_{f(p)} N$ is surjective ($m\geq n$).
+\item A map of constant rank if $r= \rank(df_p)$ does not depend on $p\in M$.
+\item An embedding if $r=m$ and $f$ is a homeomorphism onto $f(M) \subset N$.
+\end{enumerate}
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+If $(\phi,V)$ and $\phi=(x_1,x_2,\ldots, x_m)$ is a chart on $M^n$ a $k-$slice of $\phi$ is a map $(\phi_k,V_k)$, where
+\begin{gather*}
+V_k = \{p\in V\from x_{k+1} = x_m =0\},\\
+\phi_k=(x_1,\ldots, x_k),\quad \phi_k\from V_k \to \RRR^k
+\end{gather*}
+\end{ddef}
+\begin{ddef}
+$k\subset M$ is a (Regular) Submanifold of $M$ if $k$ a topological subspaces of $M$ and a smooth manifold with atlas consisting of slices of charts in $\hat \atlas(M)$.\\
+in this case $i: k\to M$ is an embedding submanifolds in a weaker sense.
+\end{ddef}
+\end{frame}
+\begin{frame}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+$A$ is a vector field $V$ on $G$ is left-invariant. If it satisfies $V(gh)=L_{g*}V(h)$ ($V_{gh} = L_{g*}V_h)$ in particular for each fixed $b\in g$, get left-invariant. Vector field
+$$B_g = L_{g*}b ,\, B_e=b$$
+Turning thinsg around, any $V\in \tnsp_gG$ can be translated back to $e\from V \mapsto L_{g^{-1}*} V$ 
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+Given vector fields $X,Y\in X^\infty (M)$ that are smooth on $M$. Let an oprator on smooth functions $f\in C^\infty(M)$ called the \textbf{Lie Bracket} of $X$ and $Y$ defined as:
+$$[X,Y](f) = X(Y(f)) - Y(X(f))$$
+so it runs out that $[X,Y]: C^\infty(M) \to C^\infty(M)$. In fact it can be proven easily that $[X,Y]$ actis as a linear derivation a each $p\in M$; that is 
+\begin{enumerate}[1)]
+\item Linear 
+\item Satisfies Liebnitz rule.
+\item Evidently second order partial derivations cancel out.
+\item And $[X,Y]=Z\in X^\infty(M)$ varies smoothly with $p\in M$ 
+\end{enumerate}
+\end{ddef}
+\begin{ddef}
+Let $\phi: M\to N$ be a smooth map  and $X\in X^\infty(M),\ A\in X^\infty(N)$.\\
+Then $X$ is \textbf{$\phi$-related} to $A$ iff $d\phi(X) = A_\phi$ at each $p\in M$.  Another way to define this is that for each $g\in C^\infty(N)$ and $p\in M$,
+$$A_{\phi(p)} (g) = d\phi (X_p) (g) = X_p(g\circ \phi) $$
+suppress $p$, and we get $X(g\circ \phi) = A(g)\circ \phi$ and this is a very useful alternate definition of $\phi$-relatedness.
+\end{ddef}
+\end{frame}
+\begin{frame}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+    A smooth curve $\alpha\from (a,b) \to M $ is a trajectory or integral curve of a vector field $V\in X^\infty (M)$ if it satisfies $\alpha ' (t) = V(\alpha(t))$. 
+    In local coordinated $\phi=(x_1,\ldots, x_n),\ \alpha_i(t) = x_i(\alpha(t))$; here necesarily $V=\sum v^i\frac{\partial}{\partial x_i}$. The precise equation is:
+    \begin{gather*} 
+    \sum_{i=1}^n \dot \alpha_i \left. \frac{\partial}{\partial x_i} \right|_{\alpha(t)} = \sum_i v^i \left. \frac{\partial}{\partial x_i} \right|_{\alpha(t)}\\
+    \dot \alpha_i(t) = v^i(\alpha(t))\\
+    \dot \alpha_i(t) = v^i\circ \phi^{-1}(\phi(\alpha(t)))\\
+    \dot \alpha_i(t) = v^i\circ \phi^{-1}(\alpha_1(t), \ldots , \alpha_n(t)) \quad i=1,\ldots, n
+\end{gather*}
+\end{ddef}
+\begin{ddef}
+    In general, if $g\from N\to M$ is a smooth map; the \textbf{pullback} of $f\in C^\infty(M)$ by $g$ is $g^*f=f\circ g\in C^\infty(N)$ 
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[Leibnitz Rule]
+The Leibnitz rule is:
+$$L_X[\omega(Y)] = (L_x\omega) Y + \omega(L_xY)$$
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+If $M_1$ and $M_2$ are Riemann Manifold and $M=M_1\times M_2$ the product manifold, with projection $\pi_i \from M\to M_i$.\\
+Then we define the \textbf{Product Metric} as:
+$$\langle u | v \rangle _{(p,q)} = \langle d\pi_1 u | d\pi_1 v\rangle_p + \langle d\pi_2 u | d\pi_2 v \rangle_q$$
+\end{ddef}
+\begin{ddef}[Volume of $(M,g)$]
+For $f(x) = f(x_1,\ldots ,x_n) $ integrable on $A\subset \RRR^n$ write:
+$$\int_A f= \int_Af(x) dx_1 \ldots dx_n$$
+suppose $\rho\from A\to \rho(A) = B\subset \RRR^n$ 
+$$\rho(y_1(x_1,\ldots,x_n), \ldots, y_n(x_1,\ldots, x_n))$$
+ with jacobian $J_p = \left( \frac{\partial y_i}{\partial  x_j} \right)$, the change of variable form.
+$$\int_{\rho(A)} f = \int_A f\circ \rho |\det J_\rho |$$
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}[Conjugation Map]
+    $c_gh= ghg^{-1} = R_{g^{-1}} L_g h$ is an automorphism of $G$. Conjugation $c\from G\to G \to G$ defines a left action of $G$ on itself.\\
+    The \textbf{Adjoint} action is corresponding action of $G$ on $\mathfrak{g}$:
+    \begin{align*}
+        &\Ad_g\from \mathfrak{g} \to \mathfrak{g}\\
+        &\Ad_gX=dL_{g^{-1}}(dL_g(X))
+    \end{align*}
+    The infinitesimal version fo this is $\ad_X\from \mathfrak{g}\to  \mathfrak{g} $ defined by:
+    $$\ad_XY =\left. \frac{d}{dt}\Ad_{e^{tx}}Y\right|_{t=0}$$
+\end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+A \textbf{Riemannian metric} $\langle,\rangle$ on $G$ is left invariant if, for any $g\in G$ $L_g\from G\to G$ is an isometry i.e. $L^{-1}_g\langle\ \rangle = \langle\ \rangle$, i.e.
+\begin{gather}
+\forall g,h\in G,X,Y\in T_h G\label{eqs}\\
+\langle X,Y\rangle = \langle dL_gX, dL_gY\rangle \label{eqss}
+\end{gather}
+\end{ddef}
+\begin{ddef}
+    The \emph{Cartan-Killing} form $K\from \lie{g}\times \lie{g} \to \RRR$ is the symmetric bilinear form with formula:
+    $$K(X,Y) = \trace(\ad_X \ad_Y)$$
+    \end{ddef}
+\end{frame}
+\begin{frame}
+\begin{ddef}
+A \textbf{Frame} on an open set $U\subset M^n$ is an $n$-tuple $(x_1,\ldots, x_n)$ is (possibly disjoint) vector fields on $U$ such that $\forall \, p\in U\; (x_1(p),\ldots, x_n(p))$ is an ordered basis for $\tnsp_p M$.
+\end{ddef}
+\begin{ddef}
+    Given smooth vector fields $X,Y\in X^\infty(M)$, we define the \emph{covariant derivative} (affine connection) a new vector field $\nabla_xY \in X^\infty(M) $ that satisfies:
+    \begin{enumerate}
+        \item $\nabla_x(Y+Z) = \nabla_X Y + \nabla_XZ$
+        \item $\nabla_{X+Y} Z = \nabla_X Z + \nabla_Y Z $
+        \item $\nabla_{fX}Y = f\nabla_XY,\; f\in C^\infty(M)$
+        \item $\nabla_X fY = X(f) Y + f\nabla_XY$
+    \end{enumerate}
+\end{ddef}
+    \begin{ddef}[Cristoffel Symbol]
+        \begin{gather*}
+            \Gamma_{i\,j}^k: \nabla_{ \frac{\partial}{\partial x_i}} \frac{\partial}{\partial x_j} = \sum_k \Gamma_{i\,j}^k  \frac{\partial}{\partial x_k}\\
+            \nabla_X Y = \sum_{i\, j} a^i\left(  \frac{\partial b^j}{\partial x^i}  \frac{\partial}{\partial x_i} + \sum_k b^j \Gamma_{ij}^k  \frac{\partial}{\partial x_k}\right)
+        \end{gather*}
+    \end{ddef}
+    \begin{ddef}
+        The smooth curve $\gamma(t)$ is a geodesic iif:
+        \begin{gather*}
+            \frac{D}{dt} \dot \gamma = \nabla_{\dot \gamma} \dot \gamma =0\\
+            b^k \longrightarrow \dot \gamma^k = (\dot{x_k\circ \gamma})
+        \end{gather*}
+    \end{ddef}
+\end{frame}
+\begin{frame}
+\end{frame}
+\end{document}
