@@ -5,3 +5,8 @@
 #IGNORE LATEX SECONDARY FILES
 *.log
 *.aux
+*.toc
+*.nav
+*.out
+*.snm
+*.thm
